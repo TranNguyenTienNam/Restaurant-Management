@@ -1,0 +1,11 @@
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\bin\Debug\QLNV.exe.config
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\bin\Debug\QLNV.exe
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\bin\Debug\QLNV.pdb
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.csprojAssemblyReference.cache
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.Properties.Resources.resources
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.csproj.GenerateResource.cache
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.csproj.CoreCompileInputs.cache
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.exe
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.pdb
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fLogin.resources
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.Quanly.resources
