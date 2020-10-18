@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLNV.DAO;
 
 namespace QLNV
 {
@@ -31,13 +32,26 @@ namespace QLNV
         {
 
         }
-
+        bool Login(string userName, string password)
+        {
+            return AccountDAO.Instance.Login(userName, password);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            Quanly f = new Quanly();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = txtUser.Text;
+            string password = txtPassWord.Text;
+            if (Login(userName, password))
+            {
+
+                fQuanly f = new fQuanly(this);              
+                f.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu !");
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -45,12 +59,23 @@ namespace QLNV
             Application.Exit();
         }
 
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            fSignUp f = new fSignUp(this);           
+            f.Show();
+            this.Hide();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn thoát chương trình?","thông báo" ,MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }    
+            Application.Exit();
         }
     }
 }

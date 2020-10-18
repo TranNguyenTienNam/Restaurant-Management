@@ -8,4 +8,5 @@ D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.csproj.CoreCompileInputs.cac
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.exe
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.pdb
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fLogin.resources
-D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.Quanly.resources
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fSignUp.resources
+D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fQuanly.resources
