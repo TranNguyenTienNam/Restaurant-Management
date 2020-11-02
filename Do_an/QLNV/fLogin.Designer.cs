@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGreen;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);

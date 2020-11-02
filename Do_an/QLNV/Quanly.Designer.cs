@@ -85,7 +85,6 @@
             this.txtNamePerson = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
@@ -718,7 +717,6 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.LightGreen;
-            this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.button5);
             this.panel9.Controls.Add(this.button6);
             this.panel9.Controls.Add(this.Addbutton);
@@ -727,19 +725,9 @@
             this.panel9.Size = new System.Drawing.Size(153, 418);
             this.panel9.TabIndex = 3;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(0, 338);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 77);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Load";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.buttonLoadPerson_Click_1);
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 227);
+            this.button5.Location = new System.Drawing.Point(3, 338);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 77);
             this.button5.TabIndex = 3;
@@ -749,7 +737,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(0, 113);
+            this.button6.Location = new System.Drawing.Point(0, 168);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(153, 81);
             this.button6.TabIndex = 2;
@@ -1266,6 +1254,5 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button button7;
     }
 }
