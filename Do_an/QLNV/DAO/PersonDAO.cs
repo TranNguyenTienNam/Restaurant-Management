@@ -24,22 +24,23 @@ namespace QLNV.DAO
         {
             return DataProvider.Instance.ExecuteQuery("SELECT *FROM NHANVIEN");
         }
-        public bool InsertPerson(string id,string name, string ngsinh,string gioitinh,string chucvu)
+        public bool InsertPerson(string name, DateTime ngsinh, string gioitinh, string chucvu)
         {
-            string query = "INSERT INTO NHANVIEN(MANV,HOTEN,GIOITINH,NGSINH,CHUCVU) VALUES ('"+id+"',N'"+name+"',N'"+gioitinh+"','"+ngsinh + "',N'" + chucvu + "')";
+            string query = "INSERT INTO NHANVIEN(HOTEN,GIOITINH,NGAYSINH,CHUCVU)" +
+                " VALUES (N'" + name + "',N'" + gioitinh + "','" + ngsinh + "',N'" + chucvu + "')";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
-        public bool UpdatePerson(string id, string name, string chucvu,string gioitinh,string ngsinh)
+        public bool UpdatePerson(string id, string name, string chucvu, string gioitinh, string ngsinh)
         {
-            string query = "UPDATE NHANVIEN SET HOTEN =N'" + name + "', CHUCVU=N'" + chucvu + "',GIOITINH=N'"+gioitinh+"',NGSINH='"+ngsinh+"' WHERE MANV='" + id+"'" ;
+            string query = "UPDATE NHANVIEN SET HOTEN =N'" + name + "', CHUCVU=N'" + chucvu + "',GIOITINH=N'" + gioitinh + "',NGAYSINH='" + ngsinh + "' WHERE MANHANVIEN='" + id + "'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
 
-        public bool DeletePerson(string id)
+        public bool DeletePerson(int id)
         {
-            string query = "DELETE FROM NHANVIEN WHERE MANV='" + id +"'";
+            string query = "DELETE FROM NHANVIEN WHERE MANHANVIEN='" + id + "'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
 

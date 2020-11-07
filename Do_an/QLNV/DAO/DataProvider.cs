@@ -20,7 +20,7 @@ namespace QLNV.DAO
         }
         private DataProvider() { }
         
-        public string connectionSTR = "Data Source=DESKTOP-9FEAL71;Initial Catalog=QLNV;User ID=sa;Password=123456;";
+        public string connectionSTR = "Data Source=DESKTOP-JEGE2E7;Initial Catalog=NHAP3;Integrated Security=True;";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -35,7 +35,8 @@ namespace QLNV.DAO
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        if (item.Contains('@'))
+                        
+                      if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
@@ -46,6 +47,37 @@ namespace QLNV.DAO
                 adapter.Fill(data);
                 connection.Close();
             }
+            return data;
+        }
+        public int ExecuteNonQuery(string query, object[] parameter = null)
+        {
+            int data = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
+            }
+
             return data;
         }
     }

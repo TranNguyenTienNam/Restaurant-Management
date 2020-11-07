@@ -13,11 +13,10 @@ namespace QLNV
 {
     public partial class fQuanly : Form
     {
-        fLogin parent1;
-        fSignUp parent2;
-        public fQuanly(fLogin parent1)
+        
+        public fQuanly()
         {
-            this.parent1 = parent1;
+            
             InitializeComponent();
            
         }
@@ -37,11 +36,7 @@ namespace QLNV
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -121,57 +116,23 @@ namespace QLNV
             }    
         }
 
-        private void tabPage5_Click_1(object sender, EventArgs e)
+     
+        void InsertPerson(string name, DateTime ngsinh, string gioitinh, string chucvu)
         {
-
+            PersonDAO.Instance.InsertPerson( name, ngsinh, gioitinh, chucvu);
         }
 
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        void InsertPerson(string id, string name, string ngsinh, string gioitinh, string chucvu)
-        {
-            PersonDAO.Instance.InsertPerson(id, name, ngsinh, gioitinh, chucvu);
-        }
         void UpdatePerson(string id, string name, string chucvu,string gioitinh,string ngsinh)
         {
             PersonDAO.Instance.UpdatePerson(id, name, chucvu,gioitinh,ngsinh);
         }
-        void DeletePerson(string id)
+        void DeletePerson(int id)
         {
             PersonDAO.Instance.DeletePerson(id);
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
+       
         private void fQuanly_FormClosing(object sender, FormClosingEventArgs e)
         {
             
@@ -179,12 +140,7 @@ namespace QLNV
             f.Show();
         }
 
-        private void buttonAddPerson_Click(object sender, EventArgs e)
-        {
-            InsertPerson(txtId.Text, txtNameInfor.Text, txtdate.Text, txtSex.Text, txtPosition.Text);
-            MessageBox.Show("thêm nhân viên thành công !");
-            PersonDAO.Instance.LoadPerson();
-        }
+      
 
         private void buttonFixPerson_Click(object sender, EventArgs e)
         {
@@ -195,13 +151,36 @@ namespace QLNV
 
         private void buttonDeletePerson_Click(object sender, EventArgs e)
         {
-            string id = Convert.ToString(txtId.Text);
+            int id = Convert.ToInt32(txtId.Text);
             DeletePerson(id);
             MessageBox.Show("xóa thành công !");
             PersonDAO.Instance.LoadPerson();
         }
 
-        private void buttonLoadPerson_Click_1(object sender, EventArgs e)
+
+      
+
+        private void txtdate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            
+                InsertPerson(txtNameInfor.Text, DateTime.Parse(txtdate.Text), txtSex.Text, txtPosition.Text);
+                MessageBox.Show("thêm nhân viên thành công !");
+                PersonDAO.Instance.LoadPerson();
+                Quanly_Load(sender, e);
+                   
+        }
+
+        private void btnLoadPerSon_Click(object sender, EventArgs e)
         {
             LoadPerson();
         }

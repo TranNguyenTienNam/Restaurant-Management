@@ -10,3 +10,27 @@ D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.pdb
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fLogin.resources
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fSignUp.resources
 D:\datuit\Bài tập LTTQ\Do_an\QLNV\obj\Debug\QLNV.fQuanly.resources
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.exe.config
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.exe
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.pdb
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csprojAssemblyReference.cache
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fLogin.resources
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fSignUp.resources
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.Properties.Resources.resources
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fQuanly.resources
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.GenerateResource.cache
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.CoreCompileInputs.cache
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.exe
+C:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.pdb
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.exe.config
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.exe
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\bin\Debug\QLNV.pdb
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csprojAssemblyReference.cache
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fLogin.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fSignUp.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.Properties.Resources.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fQuanly.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.GenerateResource.cache
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.CoreCompileInputs.cache
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.exe
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.pdb

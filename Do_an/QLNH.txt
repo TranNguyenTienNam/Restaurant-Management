@@ -1,0 +1,89 @@
+﻿create database QLNH
+go 
+use QLNH
+go
+
+create table BANAN
+(
+   MABAN int identity(1,1) Primary key,
+   TRANGTHAI nvarchar(20) not null default N'Trống',
+   TENBAN nvarchar(30) unique,
+)
+go
+
+create table TAIKHOAN
+(
+	
+	UserName varchar(100)  primary key,
+	PassWord varchar(100) not null,
+	TENHIENTHI nvarchar(100) not null,
+	CHUCVU nvarchar(100) not null,
+	GIOITINH nvarchar(10) not null,
+	NGAYSINH smalldatetime
+	
+)
+create table NHANVIEN
+(	
+        MANHANVIEN int identity(1,1) primary key,
+	HOTEN nvarchar(100) not null,
+	CHUCVU nvarchar(100) not null,
+	GIOITINH nvarchar(10) not null,
+	NGAYSINH smalldatetime
+)
+go
+create table LOAITHUCAN
+(
+	 MALOAI int identity(1,1) primary key,
+	 TENLOAI  nvarchar(100) unique,
+)
+go
+create table THUCAN
+(
+   MATHUCAN int identity(1,1) primary key,
+   GIA int not null,
+   SOLUONG int,
+   TENTHUCAN varchar(100) unique not null,
+   MALOAI int not null
+   foreign key(MALOAI) references LOAITHUCAN(MALOAI)
+)
+go
+create table HOADON
+(
+	MAHOADON int identity(1,1) primary key,
+	MABAN int ,
+	GIA int,
+	TRANGTHAI nvarchar(50) not null,
+	foreign key(MABAN) references BANAN(MABAN)
+	
+)
+go
+create table CHITIETHOADON
+(
+	MACHITIET int identity(1,1) primary key,
+    MAHOADON int ,
+	MATHUCAN int,
+	foreign key(MAHOADON) references  HOADON(MAHOADON),
+	foreign key(MATHUCAN) references THUCAN(MATHUCAN)
+)
+
+go
+--Tao procedure cho tung bang
+CREATE PROC USP_Login @userName varchar(100),@passWord varchar(100)
+AS
+BEGIN
+	select *from TAIKHOAN where UserName=@userName and PassWord=@passWord
+END
+go
+CREATE PROC USP_Signup @UserName varchar(100),
+@PassWord varchar(100),@TenHienThi nvarchar(100),
+@ChucVu nvarchar(100),@GIOITINH nvarchar(10),@NgaySinh varchar(100)
+as
+begin  
+insert into TAIKHOAN(UserName,Password,TENHIENTHI,CHUCVU,GIOITINH,NGAYSINH)
+values 
+(@UserName,@PassWord,@TenHienThi,@ChucVu,@GioiTinh,@NgaySinh)
+end
+go
+SET DATEFORMAT DMY
+
+select *from TAIKHOAN

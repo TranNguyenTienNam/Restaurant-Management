@@ -43,9 +43,10 @@ namespace QLNV
             if (Login(userName, password))
             {
 
-                fQuanly f = new fQuanly(this);              
-                f.Show();
+                fQuanly f = new fQuanly();
                 this.Hide();
+                f.ShowDialog();
+                this.Show();
             }
             else
             {
@@ -62,9 +63,11 @@ namespace QLNV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            fSignUp f = new fSignUp(this);           
-            f.Show();
             this.Hide();
+            fSignUp f = new fSignUp();
+            f.ShowDialog();
+            this.Show();
+            
 
         }
 

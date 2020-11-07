@@ -13,10 +13,10 @@ namespace QLNV
 {
     public partial class fSignUp : Form
     {
-        fLogin parent3;
-        public fSignUp(fLogin parent3)
+     
+        public fSignUp()
         {
-            this.parent3 = parent3;
+            
             InitializeComponent();
         }
 
@@ -26,19 +26,21 @@ namespace QLNV
             this.Close();
             f.Show();
         }
-        void InsertAccout(string newuser, string newpass)
-        {
-            AccountDAO.Instance.InsertAccout(newuser, newpass);
-        }
+       
         private void button3_Click(object sender, EventArgs e)
         {
             string newusername = txtNewUser.Text;
             string newpass = txtNewPassWord.Text;
             string repass = txtRePass.Text;
+            string tenhienthi = txtTenHienThi.Text;
+            string gioitinh = txtGioiTinh.Text;
+            DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text);
+            string chucvu = txtChucVu.Text;
+
             if (newpass != repass)
             {
                 MessageBox.Show("Mật khẩu không khớp !");
-                txtRePass.Focus();
+                txtTenHienThi.Focus();
             }
             else if (txtNewUser.Text == "")
             {
@@ -52,12 +54,23 @@ namespace QLNV
             }
             else
             {
-                AccountDAO.Instance.InsertAccout(newusername,newpass);
+                AccountDAO.Instance.InsertAccout(newusername,newpass,tenhienthi,chucvu,gioitinh,ngaysinh);
                 MessageBox.Show("thêm tài khoản thành công !");
                 this.Close();
-                fQuanly f = new fQuanly(parent3);
-                f.Show();   
+                fQuanly f = new fQuanly();
+                f.ShowDialog();
+                this.Hide();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtNgaySinh_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

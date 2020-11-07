@@ -29,10 +29,12 @@ namespace QLNV.DAO
                 hasPass += item;
             }
             string query = " USP_Login @userName , @passWord  ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hasPass });
-            return result.Rows.Count > 0;
+            DataTable data= DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hasPass });
+            if (data.Rows.Count > 0) return true;
+            else return false;
         }
-        public bool InsertAccout(string userName, string passWord)
+        public bool InsertAccout(string userName, string passWord,
+            string TenHienThi,string ChucVu,string GioiTinh,DateTime NgaySinh )
         {
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord);
             byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
@@ -41,9 +43,10 @@ namespace QLNV.DAO
             {
                 hasPass += item;
             }
-            string query = "INSERT INTO ACCOUNT (USERNAME,PASS) VALUES ('"+ userName + "','" + hasPass + "')";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hasPass });
-            return result.Rows.Count > 0;
+            string query = "EXEC USP_SIGNUP @USerName , @PassWord , @TenHienThi , @ChucVu , @GioiTinh , @NgaySinh";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, 
+                new object[] { userName, hasPass,TenHienThi,ChucVu,GioiTinh,NgaySinh });
+            return result > 0;
         }
     }
 }
