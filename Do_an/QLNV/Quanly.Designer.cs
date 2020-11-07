@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanly));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -85,7 +86,6 @@
             this.txtNamePerson = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
@@ -691,11 +691,13 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(281, 128);
+            this.button8.Image = global::QLNV.Properties.Resources.search__1_;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(237, 133);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(134, 43);
+            this.button8.Size = new System.Drawing.Size(189, 65);
             this.button8.TabIndex = 2;
-            this.button8.Text = "Tìm";
+            this.button8.Text = "     Tìm kiếm";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // txtNamePerson
@@ -718,7 +720,6 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.LightGreen;
-            this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.button5);
             this.panel9.Controls.Add(this.button6);
             this.panel9.Controls.Add(this.Addbutton);
@@ -727,43 +728,45 @@
             this.panel9.Size = new System.Drawing.Size(153, 418);
             this.panel9.TabIndex = 3;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(0, 338);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 77);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Load";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.buttonLoadPerson_Click_1);
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 227);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Image = global::QLNV.Properties.Resources.trash;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 338);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 77);
             this.button5.TabIndex = 3;
-            this.button5.Text = "Xóa ";
+            this.button5.Text = "   Xóa ";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.buttonDeletePerson_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(0, 113);
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Image = global::QLNV.Properties.Resources.pen;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(0, 168);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(153, 81);
             this.button6.TabIndex = 2;
-            this.button6.Text = "Sửa ";
+            this.button6.Text = "   Sửa ";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.buttonFixPerson_Click);
             // 
             // Addbutton
             // 
+            this.Addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Addbutton.Image = global::QLNV.Properties.Resources.add_user;
+            this.Addbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Addbutton.Location = new System.Drawing.Point(3, 3);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(150, 76);
             this.Addbutton.TabIndex = 1;
-            this.Addbutton.Text = "Thêm ";
+            this.Addbutton.Text = "    Thêm ";
             this.Addbutton.UseVisualStyleBackColor = true;
             this.Addbutton.Click += new System.EventHandler(this.buttonAddPerson_Click);
             // 
@@ -804,6 +807,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel4.Controls.Add(this.textBox13);
             this.panel4.Controls.Add(this.label26);
@@ -822,6 +826,7 @@
             // 
             // textBox13
             // 
+            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox13.Location = new System.Drawing.Point(149, 135);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(179, 33);
@@ -829,6 +834,7 @@
             // 
             // label26
             // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -840,6 +846,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -851,6 +858,7 @@
             // 
             // numericUpDown2
             // 
+            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown2.Location = new System.Drawing.Point(502, 135);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(155, 33);
@@ -859,6 +867,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(149, 80);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(179, 33);
@@ -866,6 +875,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -878,6 +888,7 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.Location = new System.Drawing.Point(502, 80);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(155, 33);
@@ -886,6 +897,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -897,6 +909,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -908,6 +921,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightGreen;
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
@@ -920,37 +935,44 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Image = global::QLNV.Properties.Resources.trash;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 329);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(145, 90);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Xóa món ";
+            this.button4.Text = "  Xóa";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Image = global::QLNV.Properties.Resources.pen;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 168);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 90);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Sửa món";
+            this.button3.Text = "   Sửa";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, -3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 90);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Thêm món ";
+            this.button2.Text = "    Thêm";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.label2);
@@ -962,6 +984,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 208);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -977,18 +1000,20 @@
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(250, 125);
+            this.button1.Image = global::QLNV.Properties.Resources.search__2_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(221, 125);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 43);
+            this.button1.Size = new System.Drawing.Size(190, 64);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Tìm";
+            this.button1.Text = "      Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(153, 57);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 35);
+            this.textBox1.Size = new System.Drawing.Size(258, 35);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -1004,6 +1029,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dtgvfood);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
@@ -1012,6 +1040,9 @@
             // 
             // dtgvfood
             // 
+            this.dtgvfood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvfood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvfood.Location = new System.Drawing.Point(3, 3);
             this.dtgvfood.Name = "dtgvfood";
@@ -1023,13 +1054,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -1121,6 +1154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 716);
             this.Controls.Add(this.tabControl1);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "fQuanly";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý";
@@ -1266,6 +1300,5 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button button7;
     }
 }

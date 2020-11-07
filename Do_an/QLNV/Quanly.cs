@@ -97,6 +97,8 @@ namespace QLNV
         {
             dtgvPerson.DataSource = PersonDAO.Instance.LoadPerson();
             dtgvPerson.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvPerson.Columns[0].Visible = false;
+            dtgvPerson.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             //AddPersonBinding();
         }
        /*void AddPersonBinding()
@@ -118,7 +120,8 @@ namespace QLNV
                 txtSex.Text = row.Cells[3].Value.ToString();
                 txtdate.Text = row.Cells[4].Value.ToString();
                 txtPosition.Text = row.Cells[5].Value.ToString();
-            }    
+            }
+            
         }
 
         private void tabPage5_Click_1(object sender, EventArgs e)
@@ -184,6 +187,8 @@ namespace QLNV
             InsertPerson(txtId.Text, txtNameInfor.Text, txtdate.Text, txtSex.Text, txtPosition.Text);
             MessageBox.Show("thêm nhân viên thành công !");
             PersonDAO.Instance.LoadPerson();
+            Quanly_Load(sender,e);
+            
         }
 
         private void buttonFixPerson_Click(object sender, EventArgs e)
@@ -191,6 +196,7 @@ namespace QLNV
             UpdatePerson(txtId.Text, txtNameInfor.Text, txtPosition.Text, txtSex.Text, txtdate.Text);
             MessageBox.Show("sửa thành công !");
             PersonDAO.Instance.LoadPerson();
+            Quanly_Load(sender, e);
         }
 
         private void buttonDeletePerson_Click(object sender, EventArgs e)
@@ -199,11 +205,17 @@ namespace QLNV
             DeletePerson(id);
             MessageBox.Show("xóa thành công !");
             PersonDAO.Instance.LoadPerson();
+            Quanly_Load(sender, e);
         }
 
         private void buttonLoadPerson_Click_1(object sender, EventArgs e)
         {
             LoadPerson();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

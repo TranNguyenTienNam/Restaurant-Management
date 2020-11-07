@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ListFoodDAO.cs" />
     <Compile Include="DAO\PersonDAO.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -83,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Quanly.resx">
       <DependentUpon>Quanly.cs</DependentUpon>
@@ -99,6 +101,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\editing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\pngtree-organic-food-logo-fork-and-tree-symbol-healthy-icon-png-image_313491.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAO\imageicon\search %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
