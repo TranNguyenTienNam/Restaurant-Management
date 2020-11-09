@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,44 +19,13 @@ namespace QLNV
         {
             
             InitializeComponent();
+            LoadTable();
            
         }
 
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-    
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void Quanly_Load(object sender, EventArgs e)
         {
@@ -183,6 +153,43 @@ namespace QLNV
         private void btnLoadPerSon_Click(object sender, EventArgs e)
         {
             LoadPerson();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+  
+           void LoadTable()
+            {
+                List<Table> tabeList = TableDAO.Instance.GetListTable();
+                foreach (Table table in tabeList)
+                {
+                    Button btn = new Button() { Width = 100, Height = 100 };
+                    btn.Text = table.Name + "\n" + table.Status;
+                   this.flowLayoutPanel1.Controls.Add(btn);
+                if (table.Status == "Trống") 
+                     btn.BackColor = Color.Lavender;
+                else
+                {
+                    btn.BackColor = Color.Red;
+                }
+
+                }
+
+
+
+            }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
