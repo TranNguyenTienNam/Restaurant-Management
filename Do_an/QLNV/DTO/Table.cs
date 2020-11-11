@@ -9,18 +9,19 @@ namespace QLNV
 {
     public class Table
     {
-        private int iD;
-        private string status;
-        private string name;
+        private int maban;
+        private string tenban;
+        private string trangthai;
         public Table(DataRow data)
         {
-            this.iD = (int)data["MABAN"];
-            this.status = (string)data["TRANGTHAI"];
-            this.name = (string)data["TENBAN"];
+            this.Maban = (int)data["MABAN"];
+            this.Trangthai = (string)data["TRANGTHAI"];
+            this.Tenban= (string)data["TENBAN"];
 
         }
-        public int ID { get => iD; set => iD = value; }
-        public string Status { get => status; set => status = value; }
-        public string Name { get => name; set => name = value; }
+
+        public int Maban { get => maban; set => maban = value; }
+        public string Tenban { get => tenban; set => tenban = value; }
+        public string Trangthai { get => trangthai; set => trangthai = value; }
     }
 }

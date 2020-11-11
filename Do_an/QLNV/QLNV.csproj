@@ -48,8 +48,13 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\FoodCategoryDAO.cs" />
+    <Compile Include="DAO\FoodDAO.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\PersonDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DTO\FoodCategory.cs" />
+    <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -63,6 +68,36 @@
     <Compile Include="fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCapNhatMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCapNhatMon.Designer.cs">
+      <DependentUpon>fCapNhatMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemDanhmucMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemDanhmucMon.Designer.cs">
+      <DependentUpon>fThemDanhmucMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemMon.Designer.cs">
+      <DependentUpon>fThemMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fXoaDanhMucMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fXoaDanhMucMon.Designer.cs">
+      <DependentUpon>fXoaDanhMucMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fXoaMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fXoaMon.Designer.cs">
+      <DependentUpon>fXoaMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quanly.cs">
@@ -71,11 +106,35 @@
     <Compile Include="Quanly.Designer.cs">
       <DependentUpon>Quanly.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCapNhatDanhmucMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCapNhatDanhmucMon.Designer.cs">
+      <DependentUpon>fCapNhatDanhmucMon.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fCapNhatMon.resx">
+      <DependentUpon>fCapNhatMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCapNhatDanhmucMon.resx">
+      <DependentUpon>fCapNhatDanhmucMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemDanhmucMon.resx">
+      <DependentUpon>fThemDanhmucMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemMon.resx">
+      <DependentUpon>fThemMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fXoaDanhMucMon.resx">
+      <DependentUpon>fXoaDanhMucMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fXoaMon.resx">
+      <DependentUpon>fXoaMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

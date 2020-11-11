@@ -20,7 +20,7 @@ namespace QLNV.DAO
         }
         private DataProvider() { }
         
-        public string connectionSTR = "Data Source=DESKTOP-JEGE2E7;Initial Catalog=NHAP3;Integrated Security=True;";
+        public string connectionSTR = "Data Source=DESKTOP-JEGE2E7;Initial Catalog=QUANLYNHAHANG;Integrated Security=True;";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

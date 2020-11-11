@@ -30,6 +30,7 @@ namespace QLNV
         private void Quanly_Load(object sender, EventArgs e)
         {
             LoadPerson();
+           
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -62,29 +63,9 @@ namespace QLNV
         {
             dtgvPerson.DataSource = PersonDAO.Instance.LoadPerson();
             dtgvPerson.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //AddPersonBinding();
+            
         }
-       /*void AddPersonBinding()
-        {
-            txtNameInfor.DataBindings.Add(new Binding("Text", dtgvPerson.DataSource, "HOTEN",true,DataSourceUpdateMode.Never));
-            txtId.DataBindings.Add(new Binding("Text", dtgvPerson.DataSource, "MANV" ,true, DataSourceUpdateMode.Never));
-            txtdate.DataBindings.Add(new Binding("Text", dtgvPerson.DataSource, "NGSINH", true, DataSourceUpdateMode.Never));
-            txtSex.DataBindings.Add(new Binding("Text", dtgvPerson.DataSource, "GIOITINH", true, DataSourceUpdateMode.Never));
-            txtPosition.DataBindings.Add(new Binding("Text", dtgvPerson.DataSource, "CHUCVU", true, DataSourceUpdateMode.Never));
-
-        }*/
-        private void dtgvPerson_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex>=0)
-            {
-                DataGridViewRow row = dtgvPerson.Rows[e.RowIndex];
-                txtId.Text = row.Cells[1].Value.ToString();
-                txtNameInfor.Text = row.Cells[2].Value.ToString();
-                txtSex.Text = row.Cells[3].Value.ToString();
-                txtdate.Text = row.Cells[4].Value.ToString();
-                txtPosition.Text = row.Cells[5].Value.ToString();
-            }    
-        }
+      
 
      
         void InsertPerson(string name, DateTime ngsinh, string gioitinh, string chucvu)
@@ -135,10 +116,7 @@ namespace QLNV
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
@@ -172,9 +150,11 @@ namespace QLNV
                 foreach (Table table in tabeList)
                 {
                     Button btn = new Button() { Width = 100, Height = 100 };
-                    btn.Text = table.Name + "\n" + table.Status;
+                    btn.Text = table.Tenban+ "\n" + table.Trangthai;
+                    btn.Tag = table;
+                  btn.Click += btn_Click;
                    this.flowLayoutPanel1.Controls.Add(btn);
-                if (table.Status == "Trống") 
+                if (table.Trangthai == "Trống") 
                      btn.BackColor = Color.Lavender;
                 else
                 {
@@ -187,9 +167,122 @@ namespace QLNV
 
             }
 
+
+     
+        private void btn_Click(object sender, EventArgs e)
+        {
+           
+
+            int MABAN = ((Table)(sender as Button).Tag).Maban;
+            List<DTO.Menu> menus = MenuDAO.Instance.GetListMenus(MABAN);
+            dataGridView1.DataSource = menus;
+            int tongtien = 0;
+            foreach(var i in menus)
+            {
+                tongtien +=i.Thanhtien;
+            }
+            txtTongtien.Text = tongtien.ToString();
+            
+            
+        }
+        private void dtgvfood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelectMonan.SelectedIndex == 0)
+            {
+                this.dtgvfood.DataSource=FoodCategoryDAO.Instance.LoadFoodCategory(); 
+            }
+            else
+            {
+                this.dtgvfood.DataSource=FoodDAO.Instance.LoadFood();
+            }
+              
+           
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if(cmbSelectMonan.SelectedIndex==0)
+            {
+                this.Hide();
+                fThemDanhmucMon f = new fThemDanhmucMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodCategoryDAO.Instance.LoadFoodCategory();
+                this.Show();
+            }
+            if(cmbSelectMonan.SelectedIndex==1)
+            {
+                this.Hide();
+                fThemMon f = new fThemMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodDAO.Instance.LoadFood();
+                this.Show();
+            }
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if(cmbSelectMonan.SelectedIndex==0)
+            {
+                this.Hide();
+                fCapNhatDanhmucMon f = new fCapNhatDanhmucMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodCategoryDAO.Instance.LoadFoodCategory();
+                this.Show();
+            }
+            else
+            {
+                this.Hide();
+                fCapNhatMon f = new fCapNhatMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodDAO.Instance.LoadFood();
+                this.Show();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if(cmbSelectMonan.SelectedIndex==0)
+            {
+                this.Hide();
+                fXoaDanhMucMon f = new fXoaDanhMucMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodCategoryDAO.Instance.LoadFoodCategory();
+                this.Show();
+            }
+            else
+            {
+                this.Hide();
+                fXoaMon f = new fXoaMon();
+                f.ShowDialog();
+                this.dtgvfood.DataSource = FoodDAO.Instance.LoadFood();
+                this.Show();
+            }    
         }
     }
 }

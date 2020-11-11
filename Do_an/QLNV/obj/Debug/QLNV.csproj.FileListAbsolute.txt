@@ -34,3 +34,9 @@ F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.
 F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.csproj.CoreCompileInputs.cache
 F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.exe
 F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.pdb
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fThemMon.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fThemDanhmucMon.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fCapNhatMon.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fCapNhatDanhmucMon.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fXoaDanhMucMon.resources
+F:\Project\QuanLyNhaHang\Restaurant-Management\Do_an\QLNV\obj\Debug\QLNV.fXoaMon.resources
