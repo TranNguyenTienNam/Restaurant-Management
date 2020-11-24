@@ -1,0 +1,18 @@
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe.config
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.exe
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\bin\Debug\QuanLyNhaHang.pdb
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csprojAssemblyReference.cache
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.Properties.Resources.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.GenerateResource.cache
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CoreCompileInputs.cache
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fLogin.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.FSignup.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fHome.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListFood.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListTable.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\bin\Debug\Bunifu_UI_v1.52 (1).dll
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListStaff.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListHome.resources
