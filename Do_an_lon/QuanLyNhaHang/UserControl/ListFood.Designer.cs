@@ -61,7 +61,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(331, 19);
+            this.button1.Location = new System.Drawing.Point(332, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 35);
             this.button1.TabIndex = 2;
@@ -71,14 +71,14 @@
             // textBox4
             // 
             this.textBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox4.Location = new System.Drawing.Point(35, 27);
+            this.textBox4.Location = new System.Drawing.Point(34, 28);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(290, 26);
             this.textBox4.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(242)))), ((int)(((byte)(213)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
             this.panel3.Controls.Add(this.txtAmount);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txtPrice);
@@ -90,7 +90,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(35, 72);
+            this.panel3.Location = new System.Drawing.Point(34, 72);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(888, 274);
@@ -125,7 +125,7 @@
             // 
             // txtFoodName
             // 
-            this.txtFoodName.Location = new System.Drawing.Point(633, 36);
+            this.txtFoodName.Location = new System.Drawing.Point(633, 35);
             this.txtFoodName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(234, 37);
@@ -141,7 +141,7 @@
             // 
             // txtFoodID
             // 
-            this.txtFoodID.Location = new System.Drawing.Point(200, 36);
+            this.txtFoodID.Location = new System.Drawing.Point(200, 35);
             this.txtFoodID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.Size = new System.Drawing.Size(234, 37);
@@ -195,7 +195,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(35, 389);
+            this.panel2.Location = new System.Drawing.Point(34, 389);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1070, 418);
             this.panel2.TabIndex = 5;
@@ -214,14 +214,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 355);
+            this.comboBox1.Location = new System.Drawing.Point(34, 355);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(208, 28);
             this.comboBox1.TabIndex = 6;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(242)))), ((int)(((byte)(213)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
             this.panel4.Controls.Add(this.buttonDeleteFood);
             this.panel4.Controls.Add(this.buttonUpdateFood);
             this.panel4.Controls.Add(this.buttonAddFood);
@@ -275,12 +275,13 @@
             this.buttonAddFood.TabIndex = 0;
             this.buttonAddFood.Text = "   Thêm";
             this.buttonAddFood.UseVisualStyleBackColor = true;
+            this.buttonAddFood.Click += new System.EventHandler(this.buttonAddFood_Click);
             // 
             // ListFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(242)))), ((int)(((byte)(199)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
@@ -288,7 +289,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.panel3);
             this.Name = "ListFood";
-            this.Size = new System.Drawing.Size(1132, 844);
+            this.Size = new System.Drawing.Size(1132, 845);
             this.Load += new System.EventHandler(this.ListFood_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

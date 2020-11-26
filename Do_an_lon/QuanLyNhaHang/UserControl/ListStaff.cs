@@ -22,5 +22,17 @@ namespace QuanLyNhaHang
         {
 
         }
+
+        private void buttonAddStaff_Click(object sender, EventArgs e)
+        {
+            fAddStaff f = new fAddStaff();
+            f.ShowDialog();
+            
+        }
+
+        private void ListStaff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

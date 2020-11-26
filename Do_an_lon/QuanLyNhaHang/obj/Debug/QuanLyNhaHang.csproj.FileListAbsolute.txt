@@ -16,3 +16,6 @@ D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\bin\Debug\Bunifu_UI_v1.52 (1).
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListStaff.resources
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListHome.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fAddStaff.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fAddFood.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fOrder.resources

@@ -36,5 +36,11 @@ namespace QuanLyNhaHang
         {
 
         }
+
+        private void buttonAddFood_Click(object sender, EventArgs e)
+        {
+            fAddFood f = new fAddFood();
+            f.ShowDialog();
+        }
     }
 }

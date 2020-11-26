@@ -31,5 +31,11 @@ namespace QuanLyNhaHang
         {
 
         }
+
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            fOrder f = new fOrder();
+            f.ShowDialog();
+        }
     }
 }

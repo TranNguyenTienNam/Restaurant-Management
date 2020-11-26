@@ -96,7 +96,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(242)))), ((int)(((byte)(213)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
             this.panel3.Controls.Add(this.txtPosition);
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.txtDate);
@@ -232,7 +232,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(242)))), ((int)(((byte)(213)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
             this.panel4.Controls.Add(this.buttonDeleteStaff);
             this.panel4.Controls.Add(this.buttonUpdateStaff);
             this.panel4.Controls.Add(this.buttonAddStaff);
@@ -287,12 +287,13 @@
             this.buttonAddStaff.TabIndex = 0;
             this.buttonAddStaff.Text = "   Thêm";
             this.buttonAddStaff.UseVisualStyleBackColor = true;
+            this.buttonAddStaff.Click += new System.EventHandler(this.buttonAddStaff_Click);
             // 
             // ListStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(242)))), ((int)(((byte)(199)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -300,6 +301,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ListStaff";
             this.Size = new System.Drawing.Size(1132, 844);
+            this.Load += new System.EventHandler(this.ListStaff_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);

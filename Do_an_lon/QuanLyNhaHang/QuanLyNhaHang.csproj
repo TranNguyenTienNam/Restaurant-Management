@@ -52,11 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fAddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddFood.Designer.cs">
+      <DependentUpon>fAddFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddStaff.Designer.cs">
+      <DependentUpon>fAddStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="fHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fHome.Designer.cs">
       <DependentUpon>fHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fOrder.Designer.cs">
+      <DependentUpon>fOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -96,8 +114,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAddFood.resx">
+      <DependentUpon>fAddFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddStaff.resx">
+      <DependentUpon>fAddStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fOrder.resx">
+      <DependentUpon>fOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
