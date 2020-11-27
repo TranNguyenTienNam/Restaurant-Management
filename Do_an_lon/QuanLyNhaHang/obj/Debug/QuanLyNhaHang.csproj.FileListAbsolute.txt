@@ -19,3 +19,4 @@ D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListHo
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fAddStaff.resources
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fAddFood.resources
 D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fOrder.resources
+D:\datuit\Bài tập LTTQ\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListBill.resources

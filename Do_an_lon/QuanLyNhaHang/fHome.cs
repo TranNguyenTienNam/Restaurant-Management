@@ -66,6 +66,10 @@ namespace QuanLyNhaHang
             panelMove.Height = buttonBill.Height;
             panelMove.Top = buttonBill.Top;
             buttonBill.BackColor = Color.FromArgb(136, 232, 242);
+            //LoadData lên form
+            ListBill f = new ListBill();
+            this.panelLoadData.Controls.Add(f);
+            f.BringToFront();
 
         }
 

@@ -88,6 +88,12 @@
     <Compile Include="FSignup.Designer.cs">
       <DependentUpon>FSignup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ListBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ListBill.Designer.cs">
+      <DependentUpon>ListBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ListHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSignup.resx">
       <DependentUpon>FSignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ListBill.resx">
+      <DependentUpon>ListBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ListHome.resx">
       <DependentUpon>ListHome.cs</DependentUpon>
