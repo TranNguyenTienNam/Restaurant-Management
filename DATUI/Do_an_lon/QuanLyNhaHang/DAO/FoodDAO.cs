@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace QuanLyNhaHang
+{
+    public class FoodDAO
+    {
+        private  FoodDAO() { }
+        private static FoodDAO instance;
+        public static FoodDAO Instance
+        {
+            get
+            {
+                if (instance == null) instance = new FoodDAO();
+                return instance;
+            }
+        }
+        public DataTable LoadFood()
+        {
+            DataTable data = new DataTable();
+            string query = "select MATHUCAN,TENTHUCAN,GIA,THUCAN.MALOAI,TENLOAI " +
+                "from THUCAN,LOAITHUCAN " +
+              "where THUCAN.MALOAI = LOAITHUCAN.MALOAI";
+            data=DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+        public bool InsertFood(int mathucan, string tenthucan, int gia, int maloai)
+        {
+            string query = "Insert into THUCAN(MATHUCAN,TENTHUCAN,GIA,MALOAI)"
+                + "values ("+mathucan+",N'" + tenthucan + "'," + gia + "," + maloai + ")";
+            int x = DataProvider.Instance.ExecuteNonQuery(query);
+            if (x > 0) return true;
+            return false;
+        }
+        public bool UpdateFood(int mathucan,string tenthucan,int gia,int maloai)
+        {
+            string query = "Update THUCAN "
+                + "set TENTHUCAN=N'" + tenthucan + "',GIA=" + gia
+                + ",MALOAI=" + maloai + "where MATHUCAN=" + mathucan;
+            int x = DataProvider.Instance.ExecuteNonQuery(query);
+                if (x > 0) return true;
+            return false;
+        }
+        public bool  DeleteFood(int mathucan)
+        {
+            string query = "Delete from THUCAN where mathucan=" + mathucan;
+            int x = DataProvider.Instance.ExecuteNonQuery(query);
+                if (x > 0) return true;
+            return false;
+        }
+        public List<Food> GetFoodByCategoryID(int maloai)
+        {
+            List<Food> list = new List<Food>();
+
+            string query = "select * from THUCAN where MALOAI = " + maloai ;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Food food = new Food(item);
+                list.Add(food);
+            }
+
+            return list;
+        }
+        public DataTable SearchFoodByName(string tenthucan)
+        {
+            string query = "Select *from THUCAN where TENTHUCAN like N'" + tenthucan + "%'";
+            DataTable data = new DataTable();
+            data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+
+        }
+    }
+}
