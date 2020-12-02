@@ -178,7 +178,6 @@
             this.buttonHome.Text = "Home";
             this.buttonHome.UseVisualStyleBackColor = true;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
-            this.buttonHome.Leave += new System.EventHandler(this.buttonHome_Leave);
             // 
             // buttonRevenue
             // 
@@ -195,7 +194,6 @@
             this.buttonRevenue.Text = "    Doanh thu";
             this.buttonRevenue.UseVisualStyleBackColor = true;
             this.buttonRevenue.Click += new System.EventHandler(this.buttonRevenue_Click);
-            this.buttonRevenue.Leave += new System.EventHandler(this.buttonRevenue_Leave);
             // 
             // buttonBill
             // 
@@ -212,7 +210,6 @@
             this.buttonBill.Text = "      Tạo hóa đơn";
             this.buttonBill.UseVisualStyleBackColor = true;
             this.buttonBill.Click += new System.EventHandler(this.buttonBill_Click);
-            this.buttonBill.Leave += new System.EventHandler(this.buttonBill_Leave);
             // 
             // buttonStaff
             // 
@@ -229,7 +226,6 @@
             this.buttonStaff.Text = "  Nhân viên";
             this.buttonStaff.UseVisualStyleBackColor = true;
             this.buttonStaff.Click += new System.EventHandler(this.buttonStaff_Click);
-            this.buttonStaff.Leave += new System.EventHandler(this.buttonStaff_Leave);
             // 
             // buttonTable
             // 
@@ -246,7 +242,6 @@
             this.buttonTable.Text = "Bàn ăn";
             this.buttonTable.UseVisualStyleBackColor = true;
             this.buttonTable.Click += new System.EventHandler(this.buttonTable_Click);
-            this.buttonTable.Leave += new System.EventHandler(this.buttonTable_Leave);
             // 
             // buttonFood
             // 
@@ -263,7 +258,6 @@
             this.buttonFood.Text = "Món ăn";
             this.buttonFood.UseVisualStyleBackColor = true;
             this.buttonFood.Click += new System.EventHandler(this.buttonFood_Click);
-            this.buttonFood.Leave += new System.EventHandler(this.buttonFood_Leave);
             // 
             // button1
             // 

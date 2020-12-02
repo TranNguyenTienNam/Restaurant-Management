@@ -121,7 +121,7 @@ namespace QuanLyNhaHang
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             fOrder f = new fOrder();
             f.ShowDialog();
             LoadTable();

@@ -37,6 +37,12 @@ namespace QuanLyNhaHang
             ListFood f = new ListFood();
             this.panelLoadData.Controls.Add(f);
             f.BringToFront();
+            //button trả về màu cũ khi qua button khác
+            buttonHome.BackColor = Color.FromArgb(5, 199, 242);
+            buttonTable.BackColor = Color.FromArgb(5, 199, 242);
+            buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
+            buttonBill.BackColor = Color.FromArgb(5, 199, 242);
+            buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
         }
 
         private void buttonTable_Click(object sender, EventArgs e)
@@ -48,6 +54,12 @@ namespace QuanLyNhaHang
             ListTable f = new ListTable();
             this.panelLoadData.Controls.Add(f);
             f.BringToFront();
+            //button trả về màu cũ khi qua button khác
+            buttonFood.BackColor = Color.FromArgb(5, 199, 242);
+            buttonHome.BackColor = Color.FromArgb(5, 199, 242);
+            buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
+            buttonBill.BackColor = Color.FromArgb(5, 199, 242);
+            buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
         }
 
         private void buttonStaff_Click(object sender, EventArgs e)
@@ -59,6 +71,12 @@ namespace QuanLyNhaHang
             ListStaff f = new ListStaff();
             this.panelLoadData.Controls.Add(f);
             f.BringToFront();
+            //button trả về màu cũ khi qua button khác
+            buttonFood.BackColor = Color.FromArgb(5, 199, 242);
+            buttonHome.BackColor = Color.FromArgb(5, 199, 242);
+            buttonTable.BackColor = Color.FromArgb(5, 199, 242);
+            buttonBill.BackColor = Color.FromArgb(5, 199, 242);
+            buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
         }
 
         private void buttonBill_Click(object sender, EventArgs e)
@@ -70,7 +88,12 @@ namespace QuanLyNhaHang
             ListBill f = new ListBill();
             this.panelLoadData.Controls.Add(f);
             f.BringToFront();
-
+            //button trả về màu cũ khi qua button khác
+            buttonFood.BackColor = Color.FromArgb(5, 199, 242);
+            buttonHome.BackColor = Color.FromArgb(5, 199, 242);
+            buttonTable.BackColor = Color.FromArgb(5, 199, 242);
+            buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
+            buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
         }
 
 
@@ -85,6 +108,12 @@ namespace QuanLyNhaHang
             ListHome fh = new ListHome();
             this.panelLoadData.Controls.Add(fh);
             fh.BringToFront();
+            //button trả về màu cũ khi qua button khác
+            buttonFood.BackColor = Color.FromArgb(5, 199, 242);
+            buttonTable.BackColor = Color.FromArgb(5, 199, 242);
+            buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
+            buttonBill.BackColor = Color.FromArgb(5, 199, 242);
+            buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
 
         }
 
@@ -103,6 +132,12 @@ namespace QuanLyNhaHang
             panelMove.Height = buttonRevenue.Height;
             panelMove.Top = buttonRevenue.Top;
             buttonRevenue.BackColor = Color.FromArgb(136, 232, 242);
+            //button trả về màu cũ khi qua button khác
+            buttonFood.BackColor = Color.FromArgb(5, 199, 242);
+            buttonHome.BackColor = Color.FromArgb(5, 199, 242);
+            buttonTable.BackColor = Color.FromArgb(5, 199, 242);
+            buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
+            buttonBill.BackColor = Color.FromArgb(5, 199, 242);
 
         }
 
@@ -137,10 +172,13 @@ namespace QuanLyNhaHang
 
         private void panelLoadData_Paint(object sender, PaintEventArgs e)
         {
-
+            ListHome fh = new ListHome();
+            this.panelLoadData.Controls.Add(fh);
+            fh.BringToFront();
+           
         }
         // Đổi màu button theo từng form của nó
-        private void buttonFood_Leave(object sender, EventArgs e)
+       /* private void buttonFood_Leave(object sender, EventArgs e)
         {
             buttonFood.BackColor = Color.FromArgb(5, 199, 242);
         }
@@ -168,6 +206,6 @@ namespace QuanLyNhaHang
         private void buttonRevenue_Leave(object sender, EventArgs e)
         {
             buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
-        }
+        }*/
     }
 }
