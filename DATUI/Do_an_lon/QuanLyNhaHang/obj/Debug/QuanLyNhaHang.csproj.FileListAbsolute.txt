@@ -59,3 +59,7 @@ C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNha
 C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
 C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.exe
 C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.pdb
+C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.fHelp.resources
+C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\bin\Debug\itextsharp.dll
+C:\Users\DELL\Downloads\Restaurant-Management-function\DATUI\Do_an_lon\QuanLyNhaHang\bin\Debug\itextsharp.xml

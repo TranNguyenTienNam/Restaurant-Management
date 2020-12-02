@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+
+
 
 namespace QuanLyNhaHang
 {
@@ -90,6 +94,16 @@ namespace QuanLyNhaHang
             ListBill f = new ListBill();
             panelLoadData.Controls.Add(f);
             f.BringToFront();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

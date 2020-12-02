@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52 %281%29">
       <HintPath>C:\Users\DELL\Downloads\Bunifu_UI_v1.52 (1).dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="fAddStaff.designer.cs">
       <DependentUpon>fAddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHelp.Designer.cs">
+      <DependentUpon>fHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="fHome.cs">
       <SubType>Form</SubType>
@@ -141,6 +153,9 @@
     <EmbeddedResource Include="fAddStaff.resx">
       <DependentUpon>fAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fHelp.resx">
+      <DependentUpon>fHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
