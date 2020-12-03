@@ -55,7 +55,7 @@ namespace QuanLyNhaHang
                 }
                 catch(SqlException ex)
                 {
-                    MessageBox.Show("Tài khoản đã tồn tại");
+                    MessageBox.Show("Đăng ký không thành công");
                 }
                
             }

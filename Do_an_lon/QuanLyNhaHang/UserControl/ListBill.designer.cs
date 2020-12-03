@@ -553,6 +553,7 @@
             // 
             // cbbTableName
             // 
+            this.cbbTableName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTableName.FormattingEnabled = true;
             this.cbbTableName.Location = new System.Drawing.Point(34, 6);
             this.cbbTableName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -575,6 +576,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ListBill";
             this.Size = new System.Drawing.Size(1132, 845);
+            this.Load += new System.EventHandler(this.ListBill_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

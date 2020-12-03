@@ -12,6 +12,7 @@ using Bunifu.Framework.Lib;
 using Bunifu.Framework.UI;
 using Bunifu;
 using BunifuAnimatorNS;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaHang
 {
@@ -56,7 +57,7 @@ namespace QuanLyNhaHang
                 this.dtgvFood.DataSource = FoodDAO.Instance.LoadFood();
                 dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 txtTypeID.ReadOnly = false;
-                txtFoodID.ReadOnly = false;
+                txtFoodID.ReadOnly = true;
                 txtFoodName.ReadOnly = false;
                 txtPrice.ReadOnly = false;
                 txtTypeName.ReadOnly = false;
@@ -74,7 +75,7 @@ namespace QuanLyNhaHang
         {
             fAddFood f = new fAddFood();
             f.ShowDialog();
-            this.dtgvFood.DataSource = FoodDAO.Instance.LoadFood();
+            this.dtgvFood.DataSource = FoodCategoryDAO.Instance.LoadFoodCategory();
         }
 
        
@@ -126,6 +127,10 @@ namespace QuanLyNhaHang
                 catch(FormatException ex)
                 {
                     MessageBox.Show("Một số thông tin không hợp lệ");
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show("Mã món ăn không được trùng");
                 }
             }    
            

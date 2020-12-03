@@ -111,11 +111,11 @@ namespace QuanLyNhaHang
            if(e.RowIndex>=0)
             {
                 DataGridViewRow row = dtgvStaff.Rows[e.RowIndex];
-                txtDate.Text = row.Cells["NGAYSINH"].Value.ToString();
-                txtIdStaff.Text = row.Cells["MANHANVIEN"].Value.ToString();
-                txtNameStaff.Text = row.Cells["HOTEN"].Value.ToString();
-                txtPosition.Text = row.Cells["CHUCVU"].Value.ToString();
-                txtSex.Text = row.Cells["GIOITINH"].Value.ToString();
+                txtDate.Text = row.Cells["Ngày sinh"].Value.ToString();
+                txtIdStaff.Text = row.Cells["Mã nhân viên"].Value.ToString();
+                txtNameStaff.Text = row.Cells["Họ tên"].Value.ToString();
+                txtPosition.Text = row.Cells["Chức vụ"].Value.ToString();
+                txtSex.Text = row.Cells["Giới tính"].Value.ToString();
             }
         }
 
@@ -139,6 +139,11 @@ namespace QuanLyNhaHang
                 txtDate.Text = ((DateTime)data.Rows[0]["NGAYSINH"]).ToString();
 
             }
+        }
+
+        private void ListStaff_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

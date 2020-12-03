@@ -100,6 +100,7 @@
             // 
             // dtgvStaff
             // 
+            this.dtgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvStaff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -291,6 +292,7 @@
             this.txtIdStaff.Location = new System.Drawing.Point(200, 47);
             this.txtIdStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdStaff.Name = "txtIdStaff";
+            this.txtIdStaff.ReadOnly = true;
             this.txtIdStaff.Size = new System.Drawing.Size(234, 28);
             this.txtIdStaff.TabIndex = 6;
             this.txtIdStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -444,6 +446,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ListStaff";
             this.Size = new System.Drawing.Size(1132, 845);
+            this.Load += new System.EventHandler(this.ListStaff_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).EndInit();
             this.panel3.ResumeLayout(false);

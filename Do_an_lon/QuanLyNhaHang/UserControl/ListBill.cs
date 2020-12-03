@@ -121,14 +121,23 @@ namespace QuanLyNhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int mahoadon = Convert.ToInt32(txtIdBill.Text);
-            int tongtien = Convert.ToInt32(txtTotal.Text);
-            DateTime ngaythanhtoan = Convert.ToDateTime(txtDate.Text);
-            if(BillDAO.Instance.UpdateBill(mahoadon,ngaythanhtoan,tongtien)==true)
+            try
             {
-                MessageBox.Show("Lưu thông tin hoá đơn thành công");
+                int mahoadon = Convert.ToInt32(txtIdBill.Text);
+                int tongtien = Convert.ToInt32(txtTotal.Text);
+                DateTime ngaythanhtoan = Convert.ToDateTime(txtDate.Text);
+                if (BillDAO.Instance.UpdateBill(mahoadon, ngaythanhtoan, tongtien) == true)
+                {
+                    MessageBox.Show("Lưu thông tin hoá đơn thành công");
 
+                }
             }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("Thông tin trống");
+            }
+
+
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -202,6 +211,11 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Không có bản ghi nào được Export!!!", "Info");
             }
+        }
+
+        private void ListBill_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
