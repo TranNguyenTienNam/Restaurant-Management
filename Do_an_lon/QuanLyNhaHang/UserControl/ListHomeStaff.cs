@@ -14,9 +14,9 @@ using Bunifu.Framework.UI;
 
 namespace QuanLyNhaHang
 {
-    public partial class ListHome : UserControl
+    public partial class ListHomeStaff : UserControl
     {
-        public ListHome()
+        public ListHomeStaff()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace QuanLyNhaHang
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           // timer1.Enabled = true;
+            // timer1.Enabled = true;
             //timer1.Interval = 1000;
             DateTime today = DateTime.Now;
             labelTime.Text = today.ToString("F");
@@ -50,7 +50,7 @@ namespace QuanLyNhaHang
 
         }
 
-       
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -63,11 +63,11 @@ namespace QuanLyNhaHang
             ListFood f = new ListFood();
             panelLoadData.Controls.Add(f);
             f.BringToFront();
-            
-            
+
+
         }
 
-        
+
 
         private void panelLoadData_Paint(object sender, PaintEventArgs e)
         {
@@ -79,16 +79,11 @@ namespace QuanLyNhaHang
             panelLoadData.Controls.Clear();
             ListTable f = new ListTable();
             panelLoadData.Controls.Add(f);
-            
+
             f.BringToFront();
         }
 
-        private void btnStaff_Click(object sender, EventArgs e)
-        {
-            ListStaff f = new ListStaff();
-            panelLoadData.Controls.Add(f);
-            f.BringToFront();
-        }
+       
 
         private void btnBill_Click(object sender, EventArgs e)
         {

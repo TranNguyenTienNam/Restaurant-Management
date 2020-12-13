@@ -97,6 +97,12 @@
     <Compile Include="fHome.Designer.cs">
       <DependentUpon>fHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="fHomeStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHomeStaff.Designer.cs">
+      <DependentUpon>fHomeStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="fSignup.Designer.cs">
       <DependentUpon>fSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ListHomeStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ListHomeStaff.Designer.cs">
+      <DependentUpon>ListHomeStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\ListBill.cs">
       <SubType>UserControl</SubType>
@@ -159,6 +171,9 @@
     <EmbeddedResource Include="fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fHomeStaff.resx">
+      <DependentUpon>fHomeStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ListFood.resx">
       <DependentUpon>ListFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ListHomeStaff.resx">
+      <DependentUpon>ListHomeStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ListStaff.resx">
       <DependentUpon>ListStaff.cs</DependentUpon>

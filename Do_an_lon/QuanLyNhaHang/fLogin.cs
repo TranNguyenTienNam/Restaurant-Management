@@ -38,12 +38,26 @@ namespace QuanLyNhaHang
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
-            if (Login(userName, password)==true)
+            
+             if(rBtnThuNgan.Checked==true&&userName!="admin")
             {
+                if (Login(userName, password) == true)
+                {
 
+                    fHomeStaff f = new fHomeStaff();
+                    this.Hide();
+                    f.Show();
+                   // this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu !");
+                }
+            }
+            else if (rBtnAdmin.Checked==true && userName == "admin" && Login(userName, password) == true)
+            {
                 fHome f = new fHome();
                 this.Hide();
                 f.ShowDialog();
@@ -53,6 +67,14 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu !");
             }
+                
+                
+                
+                
+                
+            
+          
+           
         }
 
         private void buttonSignup_Click(object sender, EventArgs e)
