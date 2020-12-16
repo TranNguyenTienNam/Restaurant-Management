@@ -73,5 +73,10 @@ namespace QuanLyNhaHang
         {
 
         }
+
+        private void buttonClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
