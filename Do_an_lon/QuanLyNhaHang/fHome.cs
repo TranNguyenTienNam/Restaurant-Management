@@ -133,6 +133,10 @@ namespace QuanLyNhaHang
             panelMove.Height = buttonRevenue.Height;
             panelMove.Top = buttonRevenue.Top;
             buttonRevenue.BackColor = Color.FromArgb(136, 232, 242);
+            //LoadData lên form
+            ListRevenue fr = new ListRevenue();
+            this.panelLoadData.Controls.Add(fr);
+            fr.BringToFront();
             //button trả về màu cũ khi qua button khác
             buttonFood.BackColor = Color.FromArgb(5, 199, 242);
             buttonHome.BackColor = Color.FromArgb(5, 199, 242);

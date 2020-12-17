@@ -164,3 +164,13 @@ E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\BouncyCastle.C
 E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\itextsharp.dll
 E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\itextsharp.xml
 E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.csproj.CopyComplete
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\obj\Debug\QuanLyNhaHang.ListRevenue.resources
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.dll
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.dll
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.dll
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.pdb
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.xml
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.pdb
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.WinForms.xml
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.pdb
+E:\GitHub\Restaurant-Management\Do_an_lon\QuanLyNhaHang\bin\Debug\LiveCharts.Wpf.xml

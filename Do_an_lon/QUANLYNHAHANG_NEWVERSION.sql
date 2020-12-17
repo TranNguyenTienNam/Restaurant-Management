@@ -45,7 +45,7 @@ create table HOADON
 (
 	MAHOADON int identity(1,1)  primary key,
 	MABAN int,
-	NGAYTHANHTOAN smalldatetime default null,
+	NGAYTHANHTOAN date default null,
 	TRANGTHAI nvarchar(50) default N'Chưa thanh toán',
 	TONGTIEN int default 0
 	foreign key(MABAN) references BANAN(MABAN)
