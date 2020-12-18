@@ -20,47 +20,74 @@ namespace QuanLyNhaHang
         }
 
         private RevenueDAO() { }
-        public DataTable LoadRevenue_ByDay(string fromDate, string toDate)
+        public DataTable LoadRevenue_ByDay(string fromDate, string toDate, int selectRows, int exceptRows)
         {
-            string query = "SELECT CAST(DAY(NGAYTHANHTOAN) AS VARCHAR(2)) + '-' + CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) "
-                                + "+ '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) as N'Ngày', "
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT DAY(NGAYTHANHTOAN) as N'Ngày', MONTH(NGAYTHANHTOAN) as N'Tháng', YEAR(NGAYTHANHTOAN) as N'Năm', "
                                 + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
                                 + "AND NGAYTHANHTOAN >= '" + fromDate + "' AND NGAYTHANHTOAN <= '" + toDate + "' "
-                                + "GROUP BY CAST(DAY(NGAYTHANHTOAN) AS VARCHAR(2)) + '-' + CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) + '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) "
-                                + "ORDER BY CAST(DAY(NGAYTHANHTOAN) AS VARCHAR(2)) + '-' + CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) + '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) ASC;";
+                                + "group by DAY(NGAYTHANHTOAN), MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) "
+                                + "order by DAY(NGAYTHANHTOAN), MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) asc) "
+                                + "select top " + selectRows + " * from RevenueShow except select top " + exceptRows + " * from RevenueShow;";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        public DataTable LoadRevenue_ByMonth(string fromDate, string toDate)
+        public DataTable LoadRevenue_ByMonth(string fromDate, string toDate, int selectRows, int exceptRows)
         {
-            string query = "SELECT CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) + '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) as N'Tháng', "
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT MONTH(NGAYTHANHTOAN) as N'Tháng', YEAR(NGAYTHANHTOAN) as N'Năm', "
                                 + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
                                 + "AND MONTH(NGAYTHANHTOAN) >= '" + fromDate + "' AND MONTH(NGAYTHANHTOAN) <= '" + toDate + "' "
-                                + "GROUP BY CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) + '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) "
-                                + "ORDER BY CAST(MONTH(NGAYTHANHTOAN) AS VARCHAR(4)) + '-' + CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) ASC;";
+                                + "group by MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) "
+                                + "order by MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) asc) "
+                                + "select top " + selectRows + " * from RevenueShow except select top " + exceptRows + " * from RevenueShow;";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        public DataTable LoadRevenue_ByYear(string fromDate, string toDate)
+        public DataTable LoadRevenue_ByYear(string fromDate, string toDate, int selectRows, int exceptRows)
         {
-            string query = "SELECT CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) as N'Năm', "
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT YEAR(NGAYTHANHTOAN) as N'Năm', "
                                 + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
                                 + "AND YEAR(NGAYTHANHTOAN) >= '" + fromDate + "' AND YEAR(NGAYTHANHTOAN) <= '" + toDate + "' "
-                                + "GROUP BY CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) ORDER BY CAST(YEAR(NGAYTHANHTOAN) AS VARCHAR(4)) ASC;";
+                                + "group by YEAR(NGAYTHANHTOAN) "
+                                + "order by YEAR(NGAYTHANHTOAN) asc) "
+                                + "select top " + selectRows + " * from RevenueShow except select top " + exceptRows + " * from RevenueShow;";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        public DataTable GetSaleInfos(DateTime fromDate, DateTime toDate)
+        public int GetNumBillList_ByDay(string fromDate, string toDate)
         {
-
-            return DataProvider.Instance.ExecuteQuery(
-            "SELECT HOADON.TONGTIEN revenue, YEAR(HOADON.NGAYTHANHTOAN) y, MONTH(HOADON.NGAYTHANHTOAN) m "
-                                + "FROM CHITIETHOADON dt LEFT JOIN HOADON on dt.MAHOADON = HOADON.MAHOADON "
-                                + "WHERE HOADON.NGAYTHANHTOAN >= " + fromDate + "AND HOADON.NGAYTHANHTOAN <= " + toDate
-                                  + "GROUP BY YEAR(HOADON.NGAYTHANHTOAN) ORDER BY YEAR(HOADON.NGAYTHANHTOAN) ASC;");
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT DAY(NGAYTHANHTOAN) as N'Ngày', MONTH(NGAYTHANHTOAN) as N'Tháng', YEAR(NGAYTHANHTOAN) as N'Năm', "
+                                + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
+                                + "AND NGAYTHANHTOAN >= '" + fromDate + "' AND NGAYTHANHTOAN <= '" + toDate + "' "
+                                + "group by DAY(NGAYTHANHTOAN), MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) "
+                                + "order by DAY(NGAYTHANHTOAN), MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) asc) "
+                                + "select count(*) from RevenueShow;";
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
+        }
+        public int GetNumBillList_ByMonth(string fromDate, string toDate)
+        {
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT MONTH(NGAYTHANHTOAN) as N'Tháng', YEAR(NGAYTHANHTOAN) as N'Năm', "
+                                + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
+                                + "AND MONTH(NGAYTHANHTOAN) >= '" + fromDate + "' AND MONTH(NGAYTHANHTOAN) <= '" + toDate + "' "
+                                + "group by MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) "
+                                + "order by MONTH(NGAYTHANHTOAN), YEAR(NGAYTHANHTOAN) asc) "
+                                + "select count(*) from RevenueShow;";
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
+        }
+        public int GetNumBillList_ByYear(string fromDate, string toDate)
+        {
+            string query = ";with RevenueShow as (SELECT TOP 100 PERCENT YEAR(NGAYTHANHTOAN) as N'Năm', "
+                                + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
+                                + "AND NGAYTHANHTOAN >= '" + fromDate + "' AND NGAYTHANHTOAN <= '" + toDate + "' "
+                                + "group by YEAR(NGAYTHANHTOAN) "
+                                + "order by YEAR(NGAYTHANHTOAN) asc) "
+                                + "select count(*) from RevenueShow;";
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
         }
     }
 }
