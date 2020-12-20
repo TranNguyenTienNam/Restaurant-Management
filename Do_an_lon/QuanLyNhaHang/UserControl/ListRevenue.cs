@@ -29,7 +29,7 @@ namespace QuanLyNhaHang
         int sumRecord;
         int maxPage;
         int currentPage = 1;
-        int pageSize = 1;
+        int pageSize = 3;
         int UpdateMaxPage()
         {
             string fromDate, toDate;
@@ -96,28 +96,27 @@ namespace QuanLyNhaHang
                 default: break;
             }
             maxPage = UpdateMaxPage();
+            LoadChart();
         }
 
         private void dtp_From_ValueChanged(object sender, EventArgs e)
         {
+            currentPage = 1;
             LoadRevenue();
-            LoadChart();
-            //maxPage = UpdateMaxPage();
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
         }
 
         private void dtp_To_ValueChanged(object sender, EventArgs e)
         {
+            currentPage = 1;
             LoadRevenue();
-            LoadChart();
-            //maxPage = UpdateMaxPage();
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
         }
 
         private void cbbStatiticsMode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            currentPage = 1;
             LoadRevenue();
-            LoadChart();
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
         }
 
@@ -135,13 +134,9 @@ namespace QuanLyNhaHang
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.Title = "Thời gian";
             chart1.ChartAreas[0].AxisY.Title = "Doanh thu";
-
-            for (int i = 0; i < dtgvRevenue.Rows.Count; i++)
-            {
-                Series S = chart1.Series.Add(dtgvRevenue[0, i].Value.ToString());
-                S.ChartType = SeriesChartType.Column;
-                S.Color = Color.Blue;
-            }
+            Series S = chart1.Series.Add("Doanh thu theo thời gian");
+            S.ChartType = SeriesChartType.Column;
+            S.Color = Color.Blue;
 
             if (cbbStatiticsMode.SelectedIndex != 2)
             {
@@ -150,10 +145,10 @@ namespace QuanLyNhaHang
                 // and fill in all the values from the dgv to the chart:
                 for (int i = 0; i < dtgvRevenue.Rows.Count; i++)
                 {
-                    chart1.Series[0].Points.AddXY(string.Format(x_axis_format, dtgvRevenue[0, i].Value, dtgvRevenue[1, i].Value),
+                    S.Points.AddXY(string.Format(x_axis_format, dtgvRevenue[0, i].Value, dtgvRevenue[1, i].Value),
                                 dtgvRevenue[dtgvRevenue.Columns.Count - 1, i].Value);
-                    chart1.Series[0]["PointWidth"] = "0.2";
-                    chart1.Series[0].IsValueShownAsLabel = true;
+                    S["PointWidth"] = "0.2";
+                    S.IsValueShownAsLabel = true;
                 }
             }
             else
@@ -163,41 +158,29 @@ namespace QuanLyNhaHang
                 // and fill in all the values from the dgv to the chart:
                 for (int i = 0; i < dtgvRevenue.Rows.Count; i++)
                 {
-                    chart1.Series[0].Points.AddXY(string.Format(x_axis_format, dtgvRevenue[0, i].Value),
+                    S.Points.AddXY(string.Format(x_axis_format, dtgvRevenue[0, i].Value),
                                 dtgvRevenue[dtgvRevenue.Columns.Count - 1, i].Value);
-                    chart1.Series[0]["PointWidth"] = "0.5";
-                    chart1.Series[0].IsValueShownAsLabel = true;
+                    S["PointWidth"] = "0.5";
+                    S.IsValueShownAsLabel = true;
                 }
             }
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            maxPage = UpdateMaxPage();
             currentPage = 1;
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
-
-            LoadRevenue();
-            LoadChart();
         }
         private void btnLast_Click(object sender, EventArgs e)
         {
-            maxPage = UpdateMaxPage();
             currentPage = maxPage;
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
-
-            LoadRevenue();
-            LoadChart();
         }
 
         private void btnPre_Click(object sender, EventArgs e)
         {
-            maxPage = UpdateMaxPage();
             if (currentPage > 1) currentPage--;
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
-
-            LoadRevenue();
-            LoadChart();
         }
 
         private void btnNxt_Click(object sender, EventArgs e)
@@ -205,9 +188,13 @@ namespace QuanLyNhaHang
             maxPage = UpdateMaxPage();
             if (currentPage < maxPage) currentPage++;
             txtPage.Text = string.Format("{0}/{1}", currentPage, maxPage);
+        }
 
+        private void txtPage_TextChanged(object sender, EventArgs e)
+        {
+            string[] numPage = txtPage.Text.Split('/');
+            currentPage = Int32.Parse(numPage[0]);
             LoadRevenue();
-            LoadChart();
         }
     }
 }

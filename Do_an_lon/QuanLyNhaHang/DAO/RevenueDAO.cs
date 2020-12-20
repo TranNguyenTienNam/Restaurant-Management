@@ -82,7 +82,7 @@ namespace QuanLyNhaHang
         {
             string query = ";with RevenueShow as (SELECT TOP 100 PERCENT YEAR(NGAYTHANHTOAN) as N'Năm', "
                                 + "sum(TONGTIEN) as N'Doanh thu' from HOADON where TONGTIEN > 0 "
-                                + "AND NGAYTHANHTOAN >= '" + fromDate + "' AND NGAYTHANHTOAN <= '" + toDate + "' "
+                                + "AND YEAR(NGAYTHANHTOAN) >= '" + fromDate + "' AND YEAR(NGAYTHANHTOAN) <= '" + toDate + "' "
                                 + "group by YEAR(NGAYTHANHTOAN) "
                                 + "order by YEAR(NGAYTHANHTOAN) asc) "
                                 + "select count(*) from RevenueShow;";
