@@ -84,5 +84,6 @@ namespace QuanLyNhaHang
             f.ShowDialog();
             this.Show();
         }
+
     }
 }

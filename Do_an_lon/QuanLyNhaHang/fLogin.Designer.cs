@@ -84,7 +84,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(46, 495);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(300, 48);
-            this.buttonLogin.TabIndex = 6;
+            this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -96,7 +96,7 @@
             this.txtUserName.Location = new System.Drawing.Point(102, 282);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(234, 25);
-            this.txtUserName.TabIndex = 7;
+            this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -105,7 +105,7 @@
             this.txtPassword.Location = new System.Drawing.Point(102, 358);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(234, 25);
-            this.txtPassword.TabIndex = 8;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // buttonSignup
@@ -182,7 +182,7 @@
             this.rBtnAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rBtnAdmin.Name = "rBtnAdmin";
             this.rBtnAdmin.Size = new System.Drawing.Size(93, 29);
-            this.rBtnAdmin.TabIndex = 14;
+            this.rBtnAdmin.TabIndex = 3;
             this.rBtnAdmin.TabStop = true;
             this.rBtnAdmin.Text = "Admin";
             this.rBtnAdmin.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.rBtnThuNgan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rBtnThuNgan.Name = "rBtnThuNgan";
             this.rBtnThuNgan.Size = new System.Drawing.Size(125, 29);
-            this.rBtnThuNgan.TabIndex = 15;
+            this.rBtnThuNgan.TabIndex = 4;
             this.rBtnThuNgan.TabStop = true;
             this.rBtnThuNgan.Text = "Nhân viên";
             this.rBtnThuNgan.UseVisualStyleBackColor = true;

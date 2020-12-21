@@ -180,6 +180,11 @@ namespace QuanLyNhaHang
            
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
 
         // Đổi màu button theo từng form của nó
         /* private void buttonFood_Leave(object sender, EventArgs e)

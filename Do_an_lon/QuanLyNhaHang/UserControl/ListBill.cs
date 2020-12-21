@@ -218,8 +218,9 @@ namespace QuanLyNhaHang
                                 Paragraph para5 = new Paragraph("Điện thoại: 0388888888 - 0345678989", f);
                                 Paragraph para6 = new Paragraph("Email: DNLrestaurant@gmail.com", f);
                                 Paragraph para7 = new Paragraph("HÓA ĐƠN BÁN HÀNG", f1);
-                                Paragraph para8 = new Paragraph("***********************************************************", f);
-                                Paragraph para1 = new Paragraph(label1.Text , f);
+                                Paragraph para8 = new Paragraph("* * *", f1);
+                                Paragraph para9 = new Paragraph("------------------------------------------------------------", f);
+                                Paragraph para1 = new Paragraph(cbbTableName.Text , f2);
                                 Paragraph para = new Paragraph("                        "+ label2.Text +"" + txtIdBill.Text + "                                                                             "+label4.Text+""+txtDate.Text, f);
                                 Paragraph para2 = new Paragraph("                        "+ label3.Text +"" + txtIdTable.Text + "                                                                                     "+label5.Text+""+txtTotal.Text, f);
                                 para3.Alignment = Element.ALIGN_CENTER;
@@ -229,13 +230,15 @@ namespace QuanLyNhaHang
                                 para1.Alignment = Element.ALIGN_CENTER;
                                 para7.Alignment = Element.ALIGN_CENTER;
                                 para8.Alignment = Element.ALIGN_CENTER;
+                                para9.Alignment = Element.ALIGN_CENTER;
                                 para2.Alignment = Element.ALIGN_LEFT;  
                                 para.Alignment = Element.ALIGN_LEFT;
-
+                                
                                 pdfDoc.Add(para3);
                                 pdfDoc.Add(para4);
                                 pdfDoc.Add(para5);
                                 pdfDoc.Add(para6);
+                                pdfDoc.Add(para9);
                                 pdfDoc.Add(para7);
                                 pdfDoc.Add(new Phrase(" "));
                                 pdfDoc.Add(para1);

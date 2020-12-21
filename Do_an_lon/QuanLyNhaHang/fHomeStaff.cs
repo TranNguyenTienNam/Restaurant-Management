@@ -186,6 +186,11 @@ namespace QuanLyNhaHang
             new fLogin().Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
 
         // Đổi màu button theo từng form của nó
         /* private void buttonFood_Leave(object sender, EventArgs e)
