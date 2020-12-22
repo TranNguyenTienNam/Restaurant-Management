@@ -63,7 +63,7 @@ namespace QuanLyNhaHang
             ListFood f = new ListFood();
             panelLoadData.Controls.Add(f);
             f.BringToFront();
-
+            
 
         }
 
@@ -81,6 +81,7 @@ namespace QuanLyNhaHang
             panelLoadData.Controls.Add(f);
 
             f.BringToFront();
+
         }
 
        

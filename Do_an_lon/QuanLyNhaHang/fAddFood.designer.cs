@@ -124,6 +124,7 @@
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.Size = new System.Drawing.Size(317, 23);
             this.txtFoodID.TabIndex = 26;
+            this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // label1
             // 
@@ -193,6 +194,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);

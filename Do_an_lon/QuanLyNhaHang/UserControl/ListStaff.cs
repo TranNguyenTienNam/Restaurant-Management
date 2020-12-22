@@ -104,6 +104,11 @@ namespace QuanLyNhaHang
                 }    
                 
             }
+            txtPosition.Text = "";
+            txtSex.Text = "";
+            txtDate.Text = "";
+            txtIdStaff.Text = "";
+            txtNameStaff.Text = "";
         }
 
         private void dtgvStaff_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -135,6 +140,7 @@ namespace QuanLyNhaHang
                 dtgvStaff.DataSource = data;
 
             }
+            txtSearch.Text = "";
         }
 
         private void ListStaff_Load(object sender, EventArgs e)

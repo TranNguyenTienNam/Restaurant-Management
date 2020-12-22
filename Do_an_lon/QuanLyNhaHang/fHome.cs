@@ -190,35 +190,6 @@ namespace QuanLyNhaHang
         }
 
 
-        // Đổi màu button theo từng form của nó
-        /* private void buttonFood_Leave(object sender, EventArgs e)
-         {
-             buttonFood.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonHome_Leave(object sender, EventArgs e)
-         {
-             buttonHome.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonTable_Leave(object sender, EventArgs e)
-         {
-             buttonTable.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonStaff_Leave(object sender, EventArgs e)
-         {
-             buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonBill_Leave(object sender, EventArgs e)
-         {
-             buttonBill.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonRevenue_Leave(object sender, EventArgs e)
-         {
-             buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
-         }*/
+       
     }
 }

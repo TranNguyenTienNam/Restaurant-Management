@@ -36,35 +36,41 @@ namespace QuanLyNhaHang
                     {
                       MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     }
-              else
-            {
-                try
+                else
                 {
-                    int manhanvien = Convert.ToInt32(txtIdStaff.Text);
-                    string tennhanvien = txtNameStaff.Text;
-                    string chucvu = txtPosition.Text;
-                    string gioitinh = cbbSex.SelectedItem.ToString();
-                    DateTime ngaysinh = Convert.ToDateTime(txtDate.Text);
-                    if (StaffDAO.Instance.
-                       InsertStaff(manhanvien, tennhanvien, chucvu, gioitinh, ngaysinh) == true)
+                    try
                     {
-                        MessageBox.Show("thêm nhân viên thành công !");
+                        int manhanvien = Convert.ToInt32(txtIdStaff.Text);
+                        string tennhanvien = txtNameStaff.Text;
+                        string chucvu = txtPosition.Text;
+                        string gioitinh = cbbSex.SelectedItem.ToString();
+                        DateTime ngaysinh = Convert.ToDateTime(txtDate.Text);
+                        if (StaffDAO.Instance.
+                           InsertStaff(manhanvien, tennhanvien, chucvu, gioitinh, ngaysinh) == true)
+                        {
+                            MessageBox.Show("thêm nhân viên thành công !");
+                        }
+                    }
+
+
+
+                    catch (FormatException ex)
+                    {
+                        MessageBox.Show("Một số thông tin sai định dạng");
+                        MessageBox.Show("Gợi ý: Ngày phải nhập theo mm/dd/yyyy"
+                            + " hoặc mã nhân viên phải là số");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Mã nhân viên không được trùng");
                     }
                 }
-
-
-
-                catch (FormatException ex)
-                {
-                    MessageBox.Show("Một số thông tin sai định dạng");
-                    MessageBox.Show("Gợi ý: Ngày phải nhập theo mm/dd/yyyy"
-                        + " hoặc mã nhân viên phải là số");
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Mã nhân viên không được trùng");
-                }
-            }    
+                //Khi xóa xong các textbox trở thành rỗng
+                txtIdStaff.Text = "";
+                txtDate.Text = "";
+                txtNameStaff.Text = "";
+                txtPosition.Text = "";
+                cbbSex.Text = "";
 
             
         }

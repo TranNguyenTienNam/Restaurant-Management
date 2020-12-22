@@ -378,16 +378,29 @@ namespace QuanLyNhaHang
 
         private void fInvoice_Load(object sender, EventArgs e)
         {
-           
-            
-               
-
-            
+            this.Height = 724;
+            this.Width = 1426;
+  
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

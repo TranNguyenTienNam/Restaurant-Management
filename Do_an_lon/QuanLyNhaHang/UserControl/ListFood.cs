@@ -56,7 +56,7 @@ namespace QuanLyNhaHang
             {
                 this.dtgvFood.DataSource = FoodDAO.Instance.LoadFood();
                 dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                txtTypeID.ReadOnly = false;
+                txtTypeID.ReadOnly = true;
                 txtFoodID.ReadOnly = true;
                 txtFoodName.ReadOnly = false;
                 txtPrice.ReadOnly = false;
@@ -143,7 +143,7 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Không được để trống thông tin");
             }    
-           else
+            else
             {
                 int mathucan = Convert.ToInt32(txtFoodID.Text);
                 if (FoodDAO.Instance.DeleteFood(mathucan) == true)
@@ -151,7 +151,13 @@ namespace QuanLyNhaHang
                     MessageBox.Show("Xoá món ăn thành công");
                     dtgvFood.DataSource = FoodDAO.Instance.LoadFood();
                 }
-            }    
+            }
+            //Khi xóa xong các textbox trở thành rỗng
+            txtTypeID.Text = "";
+            txtTypeName.Text = "";
+            txtPrice.Text = "";
+            txtFoodID.Text = "";
+            txtFoodName.Text = "";
             
         }
 
@@ -171,10 +177,8 @@ namespace QuanLyNhaHang
             else
             {
                 dtgvFood.DataSource = data;
-
-
-
-            }    
+            }
+            txtSearch.Text = "";
         }
 
         private void txtFoodID_TextChanged(object sender, EventArgs e)
@@ -183,6 +187,16 @@ namespace QuanLyNhaHang
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtTypeID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListFood_Load(object sender, EventArgs e)
         {
 
         }

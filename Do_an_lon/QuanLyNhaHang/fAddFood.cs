@@ -41,7 +41,7 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }    
-           try
+            try
             {
                 int mathucan = Convert.ToInt32(txtFoodID.Text);
                 string tenthucan = txtFoodName.Text;
@@ -71,6 +71,12 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Lỗi định dạng");
             }
+            //Khi thêm xong các textbox trở thành rỗng
+            txtFoodID.Text = "";
+            txtFoodName.Text = "";
+            txtPrice.Text = "";
+            txtTypeID.Text = "";
+            cbbFoodCategory.Text = "";
            
             
         }
@@ -91,6 +97,11 @@ namespace QuanLyNhaHang
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFoodID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

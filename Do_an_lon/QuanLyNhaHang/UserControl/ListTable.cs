@@ -89,12 +89,17 @@ namespace QuanLyNhaHang
                 if (mahoadon != -1)
                 {
 
-                        this.Hide();
-                        fInvoice f = new fInvoice(table.Maban);
-                    f.Show();
-                         LoadTable();
-                       LoadBill(table.Maban);
-                        this.Show();
+                    this.Hide();
+                    fInvoice f = new fInvoice(table.Maban);
+                    f.ShowDialog();
+                    /*panelLoad_in_ListTable.Controls.Clear();
+                    ListBill f1 = new ListBill();
+                    panelLoad_in_ListTable.Controls.Add(f1);
+                    panelLoad_in_ListTable.BringToFront();
+                    f1.BringToFront();*/
+                    LoadTable();
+                    LoadBill(table.Maban);
+                    this.Show();
                        // if (MessageBox.Show("Bạn muốn thanh toán hoá đơn cho "
                        // + table.Tenban, "Thông báo", MessageBoxButtons.YesNo)
                        // == System.Windows.Forms.DialogResult.Yes)
@@ -106,7 +111,8 @@ namespace QuanLyNhaHang
                     
                 }
             }
-                
+
+
             /**
              * 
           
@@ -205,28 +211,30 @@ namespace QuanLyNhaHang
         {
             Table table1 = dtgvFoodbyId.Tag as Table;
             Table table2 = (cbbSwichTable.SelectedItem as Table);
-            if (table1.Trangthai == "Trống")
-            {
-                MessageBox.Show("Bàn này hiện tai đang trống");
-            }
-            else if (table1.Maban!=table2.Maban)
-            {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn chuyển từ bàn " +
-                table1.Maban + " sang bàn " +
-                table2.Maban
-                , "Thông báo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+
+                if (table1.Trangthai == "Trống")
                 {
-                    TableDAO.Instance.SwitchTable(table1.Maban, table2.Maban);
+                    MessageBox.Show("Bàn này hiện tai đang trống");
                 }
-                LoadTable();
-            }  
-            
-            else
-            {
-                MessageBox.Show("Bạn đang ở bàn hiện tại");
-                return;
-            }    
+                else if (table1.Maban != table2.Maban)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn chuyển từ bàn " +
+                    table1.Maban + " sang bàn " +
+                    table2.Maban
+                    , "Thông báo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        TableDAO.Instance.SwitchTable(table1.Maban, table2.Maban);
+                    }
+                    LoadTable();
+                }
+
+                else
+                {
+                    MessageBox.Show("Bạn đang ở bàn hiện tại");
+                    return;
+                }
+
            
 
         }
@@ -261,6 +269,16 @@ namespace QuanLyNhaHang
                
             }
            
+        }
+
+        private void panelLoad_in_ListTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ListTable_Load(object sender, EventArgs e)
+        {
+
         }
     }
         
