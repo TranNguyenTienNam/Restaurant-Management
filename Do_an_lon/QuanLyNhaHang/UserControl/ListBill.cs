@@ -18,15 +18,9 @@ namespace QuanLyNhaHang
         public ListBill()
         {
             InitializeComponent();
-            LoadComboboxTenBan();
+            LoadBill();
         }
-        void LoadComboboxTenBan()
-        {
-            List<Table> tables = TableDAO.Instance.GetListTable();
 
-            cbbTableName.DataSource = tables;
-            cbbTableName.DisplayMember = "Tenban";
-        }
         
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
@@ -67,32 +61,34 @@ namespace QuanLyNhaHang
            
 
         }
-        private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
+       void LoadBill()
         {
-            ComboBox cb = sender as ComboBox;
-            if (cb.SelectedItem == null) return;
-            Table table = cb.SelectedItem as Table;
-            int maban = table.Maban;
-            dtgvBill.DataSource = MenuDAO.Instance.LoadBillByIdTable(maban);
-            DataRow row = BillDAO.Instance.GetInforBillByIdTable(maban);
-           if(row!=null)
+            string date = datetimeGetDay.Value.ToShortDateString();
+            dtgvBill.DataSource = BillDAO.Instance.GetBillByDate(date);
+            dtgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            for(int i = 0;i< dtgvBill.Rows.Count; i++)
             {
-                txtIdBill.Text = ((int)row["MAHOADON"]).ToString();
-                txtIdTable.Text = ((int)row["MABAN"]).ToString();
-                DateTime now = DateTime.Now;
-                txtDate.Text = now.ToString();
-                txtTotal.Text = TongTien(maban).ToString();
+                if(i%2 == 0)
+                {
+                    dtgvBill.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(179, 213, 242);
+                    dtgvBill.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(179, 213, 242);
+                }  
+                else
+                {
+                    dtgvBill.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    dtgvBill.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
+                }    
             }
-
-            
-
-            
-            
-            
+                
+            DataGridViewRow row = dtgvBill.Rows[0];
+           if(row.Cells["Mã hoá đơn"].Value !=null)
+            {
+                int mahoadon = Convert.ToInt32(row.Cells["Mã hoá đơn"].Value.ToString());
+                dtgvBillDetail.DataSource = BillDAO.Instance.GetListHistoryMenusById(mahoadon);
+            }    
 
 
         }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -103,117 +99,100 @@ namespace QuanLyNhaHang
 
         }
 
-        private void dtgvBill_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ListBill_Load(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            LoadBill();
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            string date = datetimeGetDay.Value.ToShortDateString();
+            dtgvBill.DataSource = BillDAO.Instance.GetBillByDate(date);
+            dtgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            for (int i = 0; i < dtgvBill.Rows.Count; i++)
             {
-                DataGridViewRow row = dtgvBill.Rows[e.RowIndex];
-                txtFoodName.Text = row.Cells["Tên món ăn"].Value.ToString();
-                txtUnitPrice.Text = row.Cells["Giá"].Value.ToString();
-                txtCount.Text = row.Cells["Số lượng"].Value.ToString();
-                txtPrice.Text = row.Cells["Thành tiền"].Value.ToString();
-
-
-
-                
+                if (i % 2 == 0)
+                {
+                    dtgvBill.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(179, 213, 242);
+                    dtgvBill.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(179, 213, 242);
+                }
+                else
+                {
+                    dtgvBill.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    dtgvBill.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
+                }
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSearchBill_Click(object sender, EventArgs e)
         {
             try
             {
-                int mahoadon = Convert.ToInt32(txtIdBill.Text);
-                int tongtien = Convert.ToInt32(txtTotal.Text);
-                DateTime ngaythanhtoan = Convert.ToDateTime(txtDate.Text);
-                if (BillDAO.Instance.UpdateBill(mahoadon, ngaythanhtoan, tongtien) == true)
+                int maban = Convert.ToInt32(txtIdTable.Text);
+                dtgvBill.DataSource = BillDAO.Instance.SearchBillByIdTable(maban);
+                dtgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                DataGridViewRow row = dtgvBill.Rows[0];
+                if(row.Cells["Mã hoá đơn"].Value!=null)
                 {
-                    MessageBox.Show("Lưu thông tin hoá đơn thành công");
+                    int mahoadon = Convert.ToInt32(row.Cells["Mã hoá đơn"].Value.ToString());
+                    dtgvBillDetail.DataSource = BillDAO.Instance.GetListHistoryMenusById(mahoadon);
+                }    
+                
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Mã bàn không đúng định dạng");
+            }
+
+
+        }
+
+        private void dtgvBill_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+           try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dtgvBill.Rows[e.RowIndex];
+                    txtIdBill.Text = row.Cells["Mã hoá đơn"].Value.ToString();
+                    txtIdTable.Text = row.Cells["Mã bàn"].Value.ToString();
+                    txtStatus.Text = row.Cells["Trạng thái"].Value.ToString();
+                    txtSum.Text = row.Cells["Tổng tiền"].Value.ToString();
+                    int mahoadon = Convert.ToInt32(txtIdBill.Text);
+                    dtgvBillDetail.DataSource = BillDAO.Instance.GetListHistoryMenusById(mahoadon);
                 }
             }
             catch(FormatException ex)
             {
-                MessageBox.Show("Thông tin trống");
+                MessageBox.Show("Bạn chưa nhập gì");
             }
-
-
         }
 
-        private void buttonPrint_Click(object sender, EventArgs e)
+        private void panel6_Paint(object sender, PaintEventArgs e)
         {
-            if(dtgvBill.Rows.Count>0)
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "Output.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (Exception ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("Không thể ghi dữ liệu tới ổ đĩa. Mô tả lỗi:" + ex.Message);
-                        }
-                    }
-                    if (!fileError)
-                    {
-                        try
-                        {
-                           
-                            PdfPTable pdfTable = new PdfPTable(dtgvBill.Columns.Count);
-                            pdfTable.DefaultCell.Padding = 3;
-                            pdfTable.WidthPercentage = 100;
-                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                           
-                            foreach (DataGridViewColumn column in dtgvBill.Columns)
-                            {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                                pdfTable.AddCell(cell);
-                            }
-
-                            foreach (DataGridViewRow row in dtgvBill.Rows)
-                            {
-                                foreach (DataGridViewCell cell in row.Cells)
-                                {
-                                    if(cell.Value!=null)
-                                    pdfTable.AddCell(cell.Value.ToString());
-                                }
-                            }
-
-                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                            {
-                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                                PdfWriter.GetInstance(pdfDoc, stream);
-                                pdfDoc.Open();
-                                pdfDoc.Add(pdfTable);
-                                pdfDoc.Close();
-                                stream.Close();
-                            }
-
-                            MessageBox.Show("In thành công!!!", "Info");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Mô tả lỗi :" + ex.Message);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không có bản ghi nào được Export!!!", "Info");
-            }
         }
 
-        private void ListBill_Load(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

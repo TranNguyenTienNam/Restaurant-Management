@@ -40,6 +40,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rBtnAdmin = new System.Windows.Forms.RadioButton();
+            this.rBtnThuNgan = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label1.Location = new System.Drawing.Point(73, 185);
+            this.label1.Location = new System.Drawing.Point(74, 185);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(244, 52);
             this.label1.TabIndex = 1;
@@ -79,10 +81,10 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(46, 458);
+            this.buttonLogin.Location = new System.Drawing.Point(46, 495);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(300, 48);
-            this.buttonLogin.TabIndex = 6;
+            this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -94,7 +96,7 @@
             this.txtUserName.Location = new System.Drawing.Point(102, 282);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(234, 25);
-            this.txtUserName.TabIndex = 7;
+            this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -103,7 +105,7 @@
             this.txtPassword.Location = new System.Drawing.Point(102, 358);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(234, 25);
-            this.txtPassword.TabIndex = 8;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // buttonSignup
@@ -112,10 +114,10 @@
             this.buttonSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.buttonSignup.Location = new System.Drawing.Point(46, 512);
+            this.buttonSignup.Location = new System.Drawing.Point(46, 549);
             this.buttonSignup.Name = "buttonSignup";
             this.buttonSignup.Size = new System.Drawing.Size(300, 48);
-            this.buttonSignup.TabIndex = 9;
+            this.buttonSignup.TabIndex = 6;
             this.buttonSignup.Text = "Đăng ký";
             this.buttonSignup.UseVisualStyleBackColor = true;
             this.buttonSignup.Click += new System.EventHandler(this.buttonSignup_Click);
@@ -123,7 +125,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel3.Location = new System.Drawing.Point(152, 549);
+            this.panel3.Location = new System.Drawing.Point(152, 595);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(86, 2);
             this.panel3.TabIndex = 10;
@@ -171,12 +173,42 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rBtnAdmin
+            // 
+            this.rBtnAdmin.AutoSize = true;
+            this.rBtnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBtnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.rBtnAdmin.Location = new System.Drawing.Point(46, 428);
+            this.rBtnAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtnAdmin.Name = "rBtnAdmin";
+            this.rBtnAdmin.Size = new System.Drawing.Size(93, 29);
+            this.rBtnAdmin.TabIndex = 3;
+            this.rBtnAdmin.TabStop = true;
+            this.rBtnAdmin.Text = "Admin";
+            this.rBtnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rBtnThuNgan
+            // 
+            this.rBtnThuNgan.AutoSize = true;
+            this.rBtnThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBtnThuNgan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.rBtnThuNgan.Location = new System.Drawing.Point(216, 428);
+            this.rBtnThuNgan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtnThuNgan.Name = "rBtnThuNgan";
+            this.rBtnThuNgan.Size = new System.Drawing.Size(125, 29);
+            this.rBtnThuNgan.TabIndex = 4;
+            this.rBtnThuNgan.TabStop = true;
+            this.rBtnThuNgan.Text = "Nhân viên";
+            this.rBtnThuNgan.UseVisualStyleBackColor = true;
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 600);
+            this.ClientSize = new System.Drawing.Size(400, 637);
+            this.Controls.Add(this.rBtnThuNgan);
+            this.Controls.Add(this.rBtnAdmin);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonLogin);
@@ -212,11 +244,13 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.TextBox txtUserName;
+        public System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button buttonSignup;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RadioButton rBtnAdmin;
+        private System.Windows.Forms.RadioButton rBtnThuNgan;
     }
 }
 

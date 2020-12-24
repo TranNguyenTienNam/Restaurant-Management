@@ -28,10 +28,10 @@ namespace QuanLyNhaHang
                 "GIOITINH as N'Giới tính',NGAYSINH as N'Ngày sinh' " +
                           "FROM NHANVIEN");
         }
-      public bool InsertStaff(int manhanvien,string ten,string chucvu,string gioitinh,DateTime ngaysinh)
+      public bool InsertStaff(string ten,string chucvu,string gioitinh,DateTime ngaysinh)
         {
-            string query = "INSERT INTO NHANVIEN(MANHANVIEN,HOTEN,CHUCVU,GIOITINH,NGAYSINH)" +
-                " VALUES ("+manhanvien+",N'" + ten + "',N'" + chucvu + "',N'" + gioitinh + "',N'" + ngaysinh + "')";
+            string query = "INSERT INTO NHANVIEN(HOTEN,CHUCVU,GIOITINH,NGAYSINH)" +
+                " VALUES (N'" + ten + "',N'" + chucvu + "',N'" + gioitinh + "',N'" + ngaysinh + "')";
             int x = DataProvider.Instance.ExecuteNonQuery(query);
             if (x > 0) return true;
             return false;
@@ -56,11 +56,21 @@ namespace QuanLyNhaHang
         }
         public DataTable SearchStaffByName(string hoten)
         {
-            string query = "Select *from NHANVIEN where HOTEN like N'" + hoten + "%'";
+            string query = "Select MANHANVIEN as N'Mã nhân viên',HOTEN as N'Họ tên'," +
+                "CHUCVU as N'Chức vụ',GIOITINH as N'Giới tính',NGAYSINH as N'Ngày sinh'" +
+                " from NHANVIEN where HOTEN like N'%" + hoten + "%'";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
                      
+        }
+        public int GetMaxIdStaff()
+        {
+            //truy vấn để lấy ra mã nhân viên lớn nhất
+            string query = "Select max(MANHANVIEN) from NHANVIEN";
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
+
         }
     }
 }

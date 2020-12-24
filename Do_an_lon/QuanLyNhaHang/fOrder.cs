@@ -12,22 +12,17 @@ namespace QuanLyNhaHang
 {
     public partial class fOrder : Form
     {
-        public fOrder()
+        private int Maban = 0;
+
+        public fOrder(int maban,string tenban)
         {
             InitializeComponent();
-            LoadTenBan();
+            this.Maban = maban;
+            txtNameTable.Text = tenban;
+            
             LoadDanhMuc();
         }
-        void LoadTenBan()
-        {
-
-            List<Table> tables = TableDAO.Instance.GetListTable();
-            cbTenBan.DataSource = tables;
-            
-            cbTenBan.DisplayMember = "Tenban";
-
-
-        }
+       
         void LoadDanhMuc()
         {
             List<FoodCategory> categories =
@@ -92,10 +87,11 @@ namespace QuanLyNhaHang
 
         private void btnAddfood_Click(object sender, EventArgs e)
         {
-            int maban = (cbTenBan.SelectedItem as Table).Maban;
+            
             int mathucan = (cbTenThucAn.SelectedItem as Food).Mathucan;
-            int mahoadon = BillDAO.Instance.GetIdBillByCheckStatusTable(maban);
-            TableDAO.Instance.UpdateStatusById(maban);
+            int mahoadon = BillDAO.Instance.GetIdBillByCheckStatusTable(Maban);
+            TableDAO.Instance.UpdateStatusById(Maban);
+           
 
             int soluong = (int)nmSoluong.Value;
             if (soluong <= 0)
@@ -103,16 +99,22 @@ namespace QuanLyNhaHang
                 MessageBox.Show("Số lượng món tối thiểu là 1");
                 return;
             }
-
+            //Khi bàn chưa có hoá đơn
             if (mahoadon == -1)
             {
-                BillDAO.Instance.InsertBill(maban);
+                BillDAO.Instance.InsertBill(Maban);
                 //  Tạo hoá đơn mới cho bàn
+                 mahoadon = BillDAO.Instance.GetMaxIDBill();
+                BillDAO.Instance.UpdateDayOrder(mahoadon);
                 if (BillInfoDAO.Instance.InsertBillInfo
-                    (BillDAO.Instance.GetMaxIDBill(), mathucan, soluong) == true)
-
+                    (mahoadon, mathucan, soluong) == true)
+                {
                     MessageBox.Show("Thêm thành công");
+                }
+                    
+                   
             }
+            //Khi bàn đã có hoá đơn
             else
             {
                 if (BillInfoDAO.Instance.InsertBillInfo(mahoadon, mathucan, soluong) == true)
@@ -131,6 +133,16 @@ namespace QuanLyNhaHang
         }
 
         private void cbTenBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtNameTable_TextChanged(object sender, EventArgs e)
         {
 
         }

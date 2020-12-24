@@ -99,10 +99,60 @@ namespace QuanLyNhaHang
                           + "from HOADON "
                            + "where MABAN =" + maban
                     + " and TRANGTHAI=N'Chưa thanh toán'";
-
+            
             int x = DataProvider.Instance.ExecuteScalar(query);
                  if (x > 0) return true; //Hoá đơn đã được lưu
                  return false;   //Hoá đơn chưa được lưu
+        }
+        public DataTable GetBillByDate(string date)
+        {
+            DataTable data = new DataTable();
+            string query = "select MAHOADON as N'Mã hoá đơn'," +
+                "MABAN as N'Mã bàn',TRANGTHAI as N'Trạng thái'," +
+                "TONGTIEN as N'Tổng tiền'" +
+                " from HOADON where NGAYTHANHTOAN='" +
+               date+"'";
+            data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+
+        }
+        public DataTable GetListHistoryMenusById(int mahoadon)
+        {
+            string query = "select ta.TENTHUCAN as N'Tên thức ăn',ct.SOLUONG as N'Số lượng'," +
+                "ta.GIA as N'Giá',ct.SOLUONG*ta.GIA as N'Thành tiền'" +
+                " from THUCAN as ta,CHITIETHOADON as ct,HOADON as hd " +
+                "where ta.MATHUCAN=ct.MATHUCAN and ct.MAHOADON=hd.MAHOADON" +
+                " and hd.MAHOADON=" + mahoadon ;
+            
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+        public DataTable SearchBillByIdTable(int maban)
+        {
+            DataTable data = new DataTable();
+            string query = "Select MAHOADON as N'Mã hoá đơn'," +
+                "MABAN as N'Mã bàn',TRANGTHAI as N'Trạng thái'," +
+                "TONGTIEN as N'Tổng tiền' " +
+                "from HOADON where MABAN= " + maban;
+            data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+
+        }
+        public int GetCountBillToDay()
+        {
+            string query = "select count(MAHOADON) from HOADON where NGAYGOIMON='" +
+                DateTime.Now.ToShortDateString() + "'";
+            int count = DataProvider.Instance.ExecuteScalar(query);
+            return count;
+        }
+        public void UpdateDayOrder(int mahoadon)
+        {
+            string query = "Update HOADON set NGAYGOIMON='" +
+                DateTime.Now.ToShortDateString() +
+                "' where MAHOADON=" + mahoadon;
+              DataProvider.Instance.ExecuteNonQuery(query);
+            
         }
     }
     

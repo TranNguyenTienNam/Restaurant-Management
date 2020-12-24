@@ -50,5 +50,6 @@ namespace QuanLyNhaHang
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+
     }
 }

@@ -62,8 +62,16 @@ namespace QuanLyNhaHang
                 + "where MABAN=" + maban;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-
-
+        public void SwitchTable(int maban1,int maban2)
+        {
+            string query = "USP_SwitchTable @maban1 , @maban2";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { maban1, maban2 });
+        }
+        public void MergeTable(int maban1,int maban2)
+        {
+            string query = "USP_MergeTable @maban1 , @maban2";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { maban1, maban2 });
+        }
 
 
     }

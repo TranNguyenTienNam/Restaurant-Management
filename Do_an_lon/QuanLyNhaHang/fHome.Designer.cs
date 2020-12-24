@@ -59,6 +59,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(199)))), ((int)(((byte)(242)))));
+            this.panelLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelLeft.Controls.Add(this.panel4);
             this.panelLeft.Controls.Add(this.buttonHelp);
             this.panelLeft.Controls.Add(this.panelMove);
@@ -71,7 +72,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(267, 880);
+            this.panelLeft.Size = new System.Drawing.Size(267, 788);
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
@@ -83,7 +84,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(267, 137);
+            this.panel4.Size = new System.Drawing.Size(265, 113);
             this.panel4.TabIndex = 8;
             // 
             // pictureBox1
@@ -91,7 +92,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(267, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -264,18 +265,19 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1324, 0);
+            this.button1.Location = new System.Drawing.Point(1414, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(34, 28);
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // buttonClose
             // 
             this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.Location = new System.Drawing.Point(1365, 0);
+            this.buttonClose.Location = new System.Drawing.Point(1454, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(34, 28);
             this.buttonClose.TabIndex = 4;
@@ -285,10 +287,11 @@
             // panelLoadData
             // 
             this.panelLoadData.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLoadData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelLoadData.Location = new System.Drawing.Point(267, 35);
             this.panelLoadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelLoadData.Name = "panelLoadData";
-            this.panelLoadData.Size = new System.Drawing.Size(1132, 845);
+            this.panelLoadData.Size = new System.Drawing.Size(1232, 845);
             this.panelLoadData.TabIndex = 3;
             this.panelLoadData.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLoadData_Paint);
             // 
@@ -297,13 +300,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1400, 880);
+            this.ClientSize = new System.Drawing.Size(1500, 788);
             this.Controls.Add(this.panelLoadData);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1400, 880);
+            this.MaximumSize = new System.Drawing.Size(1500, 880);
             this.MinimumSize = new System.Drawing.Size(1278, 718);
             this.Name = "fHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

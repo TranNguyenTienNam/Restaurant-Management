@@ -30,17 +30,20 @@ namespace QuanLyNhaHang
             string newusername = txtUsername.Text;
             string newpass = txtPassword.Text;
             string repass = txtRePassword.Text;
-
+            string idconfirm = txtIdConfirm.Text;
             if (newpass != repass)
             {
                 MessageBox.Show("Mật khẩu không khớp !");
-               
+
             }
-         
-            else if (newpass == ""||newusername==""||repass=="")
+            if (idconfirm != "*#1234")
+            {
+                MessageBox.Show("Mã xác nhận không hợp lệ");
+            }
+            else if (newpass == "" || newusername == "" || repass == "" || idconfirm == "")
             {
                 MessageBox.Show("Không được để trống thông tin  !");
-                
+
             }
             else
             {
@@ -49,16 +52,22 @@ namespace QuanLyNhaHang
                     AccountDAO.Instance.InsertAccout(newusername, newpass);
                     MessageBox.Show("thêm tài khoản thành công !");
                     this.Close();
-                    fHome f = new fHome();
-                    f.ShowDialog();
-                    this.Show();
+                    new fLogin().Show();
+
                 }
-                catch(SqlException ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show("Đăng ký không thành công");
+
                 }
-               
+
             }
+            
+        }
+
+        private void txtIdConfirm_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

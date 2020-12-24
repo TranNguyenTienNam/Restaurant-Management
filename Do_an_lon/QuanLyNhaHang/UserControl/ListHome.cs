@@ -19,8 +19,20 @@ namespace QuanLyNhaHang
         public ListHome()
         {
             InitializeComponent();
+            LoadRevenueToDay();
+            LoadCountBillToDay();
         }
-
+        public void LoadRevenueToDay()
+        {
+            int RevenueToday = RevenueDAO.Instance.GetRevenueToDay();
+            lblRevenueToday.Text=string.Format("{0:n0}",RevenueToday );
+            
+        }
+        
+        void LoadCountBillToDay()
+        {
+            lblCountOrder.Text = BillDAO.Instance.GetCountBillToDay().ToString();
+        }
         private void ListHome_Load(object sender, EventArgs e)
         {
             DateTime today = DateTime.Now;
@@ -59,6 +71,8 @@ namespace QuanLyNhaHang
 
         private void buttonFoodHome_Click(object sender, EventArgs e)
         {
+           
+          
             panelLoadData.Controls.Clear();
             ListFood f = new ListFood();
             panelLoadData.Controls.Add(f);
@@ -79,6 +93,7 @@ namespace QuanLyNhaHang
             panelLoadData.Controls.Clear();
             ListTable f = new ListTable();
             panelLoadData.Controls.Add(f);
+            
             f.BringToFront();
         }
 
@@ -102,6 +117,29 @@ namespace QuanLyNhaHang
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            panelLoadData.Controls.Clear();
+            ListRevenue f = new ListRevenue();
+            panelLoadData.Controls.Add(f);
+            f.BringToFront();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
