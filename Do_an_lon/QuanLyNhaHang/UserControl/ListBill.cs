@@ -165,8 +165,9 @@ namespace QuanLyNhaHang
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Mã bàn không đúng định dạng");
+                MessageBox.Show("Không có hoá đơn cần tìm kiếm");
             }
+            
 
 
         }

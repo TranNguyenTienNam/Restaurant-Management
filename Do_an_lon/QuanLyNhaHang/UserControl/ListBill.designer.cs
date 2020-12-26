@@ -66,7 +66,7 @@
             // 
             this.datetimeGetDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimeGetDay.Location = new System.Drawing.Point(4, 23);
-            this.datetimeGetDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datetimeGetDay.Margin = new System.Windows.Forms.Padding(2);
             this.datetimeGetDay.Name = "datetimeGetDay";
             this.datetimeGetDay.Size = new System.Drawing.Size(217, 21);
             this.datetimeGetDay.TabIndex = 9;
@@ -81,9 +81,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(453, 440);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -94,7 +94,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.Location = new System.Drawing.Point(35, 548);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(156, 1);
             this.panel2.TabIndex = 63;
@@ -122,7 +122,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvBill.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvBill.Location = new System.Drawing.Point(4, 45);
-            this.dtgvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvBill.Name = "dtgvBill";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -145,7 +145,7 @@
             this.panel6.BackColor = System.Drawing.Color.DimGray;
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(555, 519);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(240, 1);
             this.panel6.TabIndex = 65;
@@ -155,7 +155,7 @@
             this.panel5.BackColor = System.Drawing.Color.DimGray;
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(555, 486);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(240, 1);
             this.panel5.TabIndex = 62;
@@ -211,9 +211,9 @@
             this.groupBox2.Controls.Add(this.dtgvBillDetail);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(459, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(361, 440);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -240,7 +240,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvBillDetail.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvBillDetail.Location = new System.Drawing.Point(4, 30);
-            this.dtgvBillDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvBillDetail.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvBillDetail.Name = "dtgvBillDetail";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -262,7 +262,7 @@
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(148, 557);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 1);
             this.panel1.TabIndex = 40;
@@ -273,17 +273,18 @@
             this.btnSearchBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchBill.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBill.Image")));
             this.btnSearchBill.Location = new System.Drawing.Point(376, 460);
-            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchBill.Name = "btnSearchBill";
             this.btnSearchBill.Size = new System.Drawing.Size(38, 23);
             this.btnSearchBill.TabIndex = 72;
             this.btnSearchBill.UseVisualStyleBackColor = true;
+            this.btnSearchBill.Click += new System.EventHandler(this.btnSearchBill_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
             this.panel3.Location = new System.Drawing.Point(96, 483);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 1);
             this.panel3.TabIndex = 71;
@@ -293,7 +294,7 @@
             this.panel4.BackColor = System.Drawing.Color.DimGray;
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(119, 521);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(287, 1);
             this.panel4.TabIndex = 70;
@@ -347,7 +348,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.DimGray;
             this.panel7.Location = new System.Drawing.Point(453, 452);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 88);
             this.panel7.TabIndex = 73;
