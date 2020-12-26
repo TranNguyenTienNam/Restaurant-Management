@@ -30,6 +30,19 @@ namespace QuanLyNhaHang
         {
             dtgvStaff.DataSource = StaffDAO.Instance.LoadStaff();
             dtgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            for (int i = 0; i < dtgvStaff.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb( 179, 213, 242);
+                    dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(179, 213, 242);
+                }
+                else
+                {
+                    dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
+                }
+            }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -104,6 +117,11 @@ namespace QuanLyNhaHang
                 }    
                 
             }
+            txtPosition.Text = "";
+            txtSex.Text = "";
+            txtDate.Text = "";
+            txtIdStaff.Text = "";
+            txtNameStaff.Text = "";
         }
 
         private void dtgvStaff_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -128,22 +146,47 @@ namespace QuanLyNhaHang
         {
             string name = txtSearch.Text;
             DataTable data = StaffDAO.Instance.SearchStaffByName(name);
-            if (data.Rows.Count == 0)
+            if (data.Rows.Count == 0||name=="")
                 MessageBox.Show("Không có thông tin nhân viên cần tìm");
             else
             {
-                txtIdStaff.Text = ((int)data.Rows[0]["MANHANVIEN"]).ToString();
-                txtNameStaff.Text = (string)data.Rows[0]["HOTEN"];
-                txtPosition.Text = (string)data.Rows[0]["CHUCVU"];
-                txtSex.Text = (string)data.Rows[0]["GIOITINH"];
-                txtDate.Text = ((DateTime)data.Rows[0]["NGAYSINH"]).ToString();
-
+                dtgvStaff.DataSource = data;
+                for (int i = 0; i < dtgvStaff.Rows.Count; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(179, 213, 242);
+                        dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(179, 213, 242);
+                    }
+                    else
+                    {
+                        dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                        dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
+                    }
+                }
             }
+           
         }
 
         private void ListStaff_Load(object sender, EventArgs e)
         {
-
+            dtgvStaff.DataSource = StaffDAO.Instance.LoadStaff();
+            dtgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            for (int i = 0; i < dtgvStaff.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(179, 213, 242);
+                    dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(179, 213, 242);
+                }
+                else
+                {
+                    dtgvStaff.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    dtgvStaff.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
+                }
+            }
         }
+
+
     }
 }

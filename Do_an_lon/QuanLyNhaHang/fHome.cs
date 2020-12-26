@@ -101,7 +101,6 @@ namespace QuanLyNhaHang
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-
             panelMove.Height = buttonHome.Height;
             panelMove.Top = buttonHome.Top;
             buttonHome.BackColor = Color.FromArgb(136, 232, 242);
@@ -133,6 +132,10 @@ namespace QuanLyNhaHang
             panelMove.Height = buttonRevenue.Height;
             panelMove.Top = buttonRevenue.Top;
             buttonRevenue.BackColor = Color.FromArgb(136, 232, 242);
+            //LoadData lên form
+           ListRevenue lr = new ListRevenue();
+            this.panelLoadData.Controls.Add(lr);
+            lr.BringToFront();
             //button trả về màu cũ khi qua button khác
             buttonFood.BackColor = Color.FromArgb(5, 199, 242);
             buttonHome.BackColor = Color.FromArgb(5, 199, 242);
@@ -146,7 +149,7 @@ namespace QuanLyNhaHang
         private void fHome_Load(object sender, EventArgs e)
         {
             this.Height = 880;
-            this.Width = 1400;
+            this.Width = 1500;
 
         }
 
@@ -180,36 +183,12 @@ namespace QuanLyNhaHang
            
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
-        // Đổi màu button theo từng form của nó
-        /* private void buttonFood_Leave(object sender, EventArgs e)
-         {
-             buttonFood.BackColor = Color.FromArgb(5, 199, 242);
-         }
 
-         private void buttonHome_Leave(object sender, EventArgs e)
-         {
-             buttonHome.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonTable_Leave(object sender, EventArgs e)
-         {
-             buttonTable.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonStaff_Leave(object sender, EventArgs e)
-         {
-             buttonStaff.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonBill_Leave(object sender, EventArgs e)
-         {
-             buttonBill.BackColor = Color.FromArgb(5, 199, 242);
-         }
-
-         private void buttonRevenue_Leave(object sender, EventArgs e)
-         {
-             buttonRevenue.BackColor = Color.FromArgb(5, 199, 242);
-         }*/
+       
     }
 }

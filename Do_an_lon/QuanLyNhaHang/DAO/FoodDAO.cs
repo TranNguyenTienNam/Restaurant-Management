@@ -30,10 +30,10 @@ namespace QuanLyNhaHang
             data=DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        public bool InsertFood(int mathucan, string tenthucan, int gia, int maloai)
+        public bool InsertFood( string tenthucan, int gia, int maloai)
         {
-            string query = "Insert into THUCAN(MATHUCAN,TENTHUCAN,GIA,MALOAI)"
-                + "values ("+mathucan+",N'" + tenthucan + "'," + gia + "," + maloai + ")";
+            string query = "Insert into THUCAN(TENTHUCAN,GIA,MALOAI)"
+                + "values (N'" + tenthucan + "'," + gia + "," + maloai + ")";
             int x = DataProvider.Instance.ExecuteNonQuery(query);
             if (x > 0) return true;
             return false;
@@ -72,11 +72,23 @@ namespace QuanLyNhaHang
         }
         public DataTable SearchFoodByName(string tenthucan)
         {
-            string query = "Select *from THUCAN where TENTHUCAN like N'" + tenthucan + "%'";
+            string query = "Select MATHUCAN as N'Mã thức ăn',TENTHUCAN as N'Tên thức ăn'," +
+                "GIA as N'Giá',THUCAN.MALOAI as N'Mã loại',TENLOAI as N'Tên loại'" +
+                " from THUCAN,LOAITHUCAN where TENTHUCAN like N'%" + tenthucan + "%' " +
+                "and THUCAN.MALOAI=LOAITHUCAN.MALOAI";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
 
         }
+        public int GetMaxIdFood()
+        {
+            string query = "select max(MATHUCAN) from THUCAN";
+            //tra ve gia tri lon nhat cua ma thuc an
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
+
+        }
+            
     }
 }

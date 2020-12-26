@@ -16,6 +16,7 @@ namespace QuanLyNhaHang
         public fAddFood()
         {
             InitializeComponent();
+            txtFoodID.Text = (FoodDAO.Instance.GetMaxIdFood()+1).ToString();
             LoadFoodCategory();
         }
 
@@ -36,20 +37,26 @@ namespace QuanLyNhaHang
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if(txtFoodID.Text==""||txtFoodName.Text==""||
+            if(txtFoodName.Text==""||
                 txtPrice.Text==""||txtTypeID.Text=="")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
             }    
-           try
+            try
             {
-                int mathucan = Convert.ToInt32(txtFoodID.Text);
+               
                 string tenthucan = txtFoodName.Text;
                 int gia = Convert.ToInt32(txtPrice.Text);
                 int maloai = Convert.ToInt32(txtTypeID.Text);
-                if (FoodDAO.Instance.InsertFood(mathucan, tenthucan, gia, maloai) == true)
+                if (FoodDAO.Instance.InsertFood(tenthucan, gia, maloai) == true)
                 {
                     MessageBox.Show("Thêm món ăn thành công");
+                    txtFoodID.Text = (Convert.ToInt32(txtFoodID.Text) + 1).ToString();
+                    txtFoodName.Text = "";
+                    txtPrice.Text = "";
+                    txtTypeID.Text = "";
+                    cbbFoodCategory.Text = "";
 
                 }
             }
@@ -71,6 +78,9 @@ namespace QuanLyNhaHang
             {
                 MessageBox.Show("Lỗi định dạng");
             }
+            //Khi thêm xong các textbox trở thành rỗng và tăng mã thức ăn lên 1
+            
+            
            
             
         }
@@ -86,6 +96,16 @@ namespace QuanLyNhaHang
             string tenloai = category.Tenloai;
             int maloai = FoodCategoryDAO.Instance.GetIdByNameFoodCategory(tenloai);
             txtTypeID.Text = maloai.ToString();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtFoodID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

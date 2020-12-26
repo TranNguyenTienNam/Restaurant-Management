@@ -109,8 +109,21 @@ namespace QuanLyNhaHang
                         }
                     }
                 }
+               
+                   try
+                {
+                    data = (int)command.ExecuteScalar();
+                }
+                catch(Exception ex)
+                {
 
-                data = (int)command.ExecuteScalar();
+                }
+                return data;
+                
+               
+                    
+                    
+                
 
                 connection.Close();
             }
