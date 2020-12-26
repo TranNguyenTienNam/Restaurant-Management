@@ -134,7 +134,7 @@ namespace QuanLyNhaHang
             string query = "Select MAHOADON as N'Mã hoá đơn'," +
                 "MABAN as N'Mã bàn',TRANGTHAI as N'Trạng thái'," +
                 "TONGTIEN as N'Tổng tiền' " +
-                "from HOADON where MABAN= " + maban;
+                "from HOADON where MABAN= " + maban + " and TRANGTHAI=N'Đã thanh toán'";
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
 
