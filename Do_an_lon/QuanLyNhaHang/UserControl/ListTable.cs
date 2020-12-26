@@ -18,7 +18,6 @@ namespace QuanLyNhaHang
             LoadTable();
             LoadComboboxTenBan();
         }
-
         void LoadTable()
         {
             this.flowLayoutPanel1.Controls.Clear();
@@ -30,6 +29,7 @@ namespace QuanLyNhaHang
                 btn.Tag = table;
 
                 btn.Click += btn_Click;
+                btn.Leave += btn_Leave;
                 this.flowLayoutPanel1.Controls.Add(btn);
 
                 if (table.Trangthai == "Trống")
@@ -41,15 +41,58 @@ namespace QuanLyNhaHang
 
             }
         }
+        private void btn_Leave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            Table table = btn.Tag as Table;
+            if (table.Trangthai == "Trống")
+                btn.BackColor = Color.Lavender;
+            else
+            {
+                btn.BackColor = Color.Red;
+            }
+
+        }
         private void btn_Click(object sender, EventArgs e)
         {
 
             int MABAN = ((Table)(sender as Button).Tag).Maban;
             dtgvFoodbyId.Tag = (sender as Button).Tag;
             LoadBill(MABAN);
-
+            Button btn = sender as Button;
+            btn.BackColor = Color.LightYellow;
         }
+        /*  void LoadTable()
+          {
+              this.flowLayoutPanel1.Controls.Clear();
+              List<Table> tabeList = TableDAO.Instance.GetListTable();
+              foreach (Table table in tabeList)
+              {
+                  Button btn = new Button() { Width = 100, Height = 100 };
+                  btn.Text = table.Tenban + "\n" + table.Trangthai;
+                  btn.Tag = table;
 
+                  btn.Click += btn_Click;
+                  this.flowLayoutPanel1.Controls.Add(btn);
+
+                  if (table.Trangthai == "Trống")
+                      btn.BackColor = Color.Lavender;
+                  else
+                  {
+                      btn.BackColor = Color.Red;
+                  }
+
+              }
+          }
+          private void btn_Click(object sender, EventArgs e)
+          {
+
+              int MABAN = ((Table)(sender as Button).Tag).Maban;
+              dtgvFoodbyId.Tag = (sender as Button).Tag;
+              LoadBill(MABAN);
+
+          }
+        */
         void LoadBill(int MABAN)
         {
 
@@ -127,14 +170,16 @@ namespace QuanLyNhaHang
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
+            
             int maban = (dtgvFoodbyId.Tag as Table).Maban;
             string tenban = (dtgvFoodbyId.Tag as Table).Tenban;
       
             fOrder f = new fOrder(maban,tenban);
             f.ShowDialog();
             LoadTable();
+            LoadBill(maban);
             this.Show();
-
+            
         }
 
         void LoadComboboxTenBan()
@@ -192,8 +237,9 @@ namespace QuanLyNhaHang
                     if (dialogResult == DialogResult.Yes)
                     {
                         TableDAO.Instance.SwitchTable(table1.Maban, table2.Maban);
+                        LoadTable();
                     }
-                    LoadTable();
+                    //LoadTable();
                 }
 
                 else
@@ -268,6 +314,17 @@ namespace QuanLyNhaHang
         private void groupBox1_Enter(object sender, EventArgs e)
         {
         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thêm bàn không ?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                TableDAO.Instance.AddTable();
+                LoadTable();
+            }
         }
     }
         

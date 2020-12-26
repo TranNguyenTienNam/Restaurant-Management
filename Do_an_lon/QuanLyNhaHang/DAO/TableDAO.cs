@@ -72,6 +72,19 @@ namespace QuanLyNhaHang
             string query = "USP_MergeTable @maban1 , @maban2";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { maban1, maban2 });
         }
+        public int GetMaxIdTable()
+        {
+            string query = "select max(MABAN) from BANAN";
+            int x = DataProvider.Instance.ExecuteScalar(query);
+            return x;
+        }
+        public void AddTable()
+        {
+            int maban = TableDAO.Instance.GetMaxIdTable()+1;
+            string query = "Insert into BANAN(MABAN,TENBAN) " +
+                "values(" + maban + ",N'Bàn " + maban + "')";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
 
 
     }

@@ -42,11 +42,12 @@ namespace QuanLyNhaHang
         public DataTable LoadBillByIdTable(int Maban)
         {
             DataTable data = new DataTable();
-            string query = "select ta.TENTHUCAN as N'Tên món ăn',ct.SOLUONG as N'Số lượng'," +
-                "ta.GIA as N'Giá',ct.SOLUONG*ta.GIA as N'Thành tiền'" +
+            string query = "select ta.TENTHUCAN as N'Tên món ăn',sum(ct.SOLUONG) as N'Số lượng'," +
+                "sum(ta.GIA) as N'Giá',sum(ct.SOLUONG*ta.GIA) as N'Thành tiền'" +
                 " from THUCAN as ta,CHITIETHOADON as ct,HOADON as hd " +
                 "where ta.MATHUCAN=ct.MATHUCAN and ct.MAHOADON=hd.MAHOADON" +
-                " and hd.MABAN=" + Maban + " and hd.TRANGTHAI=N'Chưa thanh toán'";
+                " and hd.MABAN=" + Maban + " and hd.TRANGTHAI=N'Chưa thanh toán'" +
+                " group by TA.TENTHUCAN";
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

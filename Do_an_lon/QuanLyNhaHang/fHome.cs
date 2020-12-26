@@ -101,7 +101,6 @@ namespace QuanLyNhaHang
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            
             panelMove.Height = buttonHome.Height;
             panelMove.Top = buttonHome.Top;
             buttonHome.BackColor = Color.FromArgb(136, 232, 242);

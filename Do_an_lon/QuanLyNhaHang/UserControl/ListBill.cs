@@ -79,13 +79,19 @@ namespace QuanLyNhaHang
                     dtgvBill.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
                 }    
             }
-                
-            DataGridViewRow row = dtgvBill.Rows[0];
-           if(row.Cells["Mã hoá đơn"].Value !=null)
+            try
             {
-                int mahoadon = Convert.ToInt32(row.Cells["Mã hoá đơn"].Value.ToString());
-                dtgvBillDetail.DataSource = BillDAO.Instance.GetListHistoryMenusById(mahoadon);
-            }    
+                DataGridViewRow row = dtgvBill.Rows[0];
+                if (row.Cells["Mã hoá đơn"].Value != null)
+                {
+                    int mahoadon = Convert.ToInt32(row.Cells["Mã hoá đơn"].Value.ToString());
+                    dtgvBillDetail.DataSource = BillDAO.Instance.GetListHistoryMenusById(mahoadon);
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
 
 
         }

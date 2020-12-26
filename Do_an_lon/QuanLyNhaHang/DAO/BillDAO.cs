@@ -118,11 +118,11 @@ namespace QuanLyNhaHang
         }
         public DataTable GetListHistoryMenusById(int mahoadon)
         {
-            string query = "select ta.TENTHUCAN as N'Tên thức ăn',ct.SOLUONG as N'Số lượng'," +
-                "ta.GIA as N'Giá',ct.SOLUONG*ta.GIA as N'Thành tiền'" +
+            string query = "select ta.TENTHUCAN as N'Tên thức ăn',sum(ct.SOLUONG) as N'Số lượng'," +
+                "sum(ta.GIA) as N'Giá',sum(ct.SOLUONG*ta.GIA) as N'Thành tiền'" +
                 " from THUCAN as ta,CHITIETHOADON as ct,HOADON as hd " +
                 "where ta.MATHUCAN=ct.MATHUCAN and ct.MAHOADON=hd.MAHOADON" +
-                " and hd.MAHOADON=" + mahoadon ;
+                " and hd.MAHOADON=" + mahoadon+" Group by ta.TENTHUCAN" ;
             
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

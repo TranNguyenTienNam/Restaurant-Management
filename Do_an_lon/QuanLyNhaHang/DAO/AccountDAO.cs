@@ -47,5 +47,13 @@ namespace QuanLyNhaHang
                 new object[] { userName, hasPass });
             return result > 0;
         }
+        public bool IsExitAccount(string username)
+        {
+            string query = "Select count(*) from TAIKHOAN " +
+                "where UserName='" + username+"'";
+            int x=DataProvider.Instance.ExecuteScalar(query);
+            if (x > 0) return true;
+            return false;
+        }
     }
 }
